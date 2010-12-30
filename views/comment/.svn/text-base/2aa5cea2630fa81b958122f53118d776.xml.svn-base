@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>ben</name>
+		<email>ben@dekko.info</email>
+		<website></website>
+		<link><a href="" title="go to: "></a></link>
+		<yourcomment>Simple solution, greetings and thx!
+
+/b</yourcomment>
+		<date>{ts '2005-10-09 10:52:51'}</date>
+		<formatteddate>09, October 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

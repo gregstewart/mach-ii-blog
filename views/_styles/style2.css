@@ -1,0 +1,394 @@
+#error {
+	border : 2px solid #f00;
+	padding : 5px;
+	margin-bottom: 3px;
+	background-color: #ff7f7f;
+}
+
+#success {
+	border : 2px solid #060;
+	padding : 5px;
+	margin-bottom: 3px;
+	background-color: #8fbc8f;
+}
+
+#warn {
+	border : 2px solid #fc0;
+	padding : 5px;
+	margin-bottom: 3px;
+	background-color: #ff6;
+}
+
+/* start tabless form layout */
+div.row {
+  clear : both;
+}
+
+div.row span.label {
+  float : left;
+  width : 60px;
+  text-align : right;
+}
+
+div.row span.formw {
+  float : right;
+  width : 90px;
+  text-align : left;
+} 
+/* end tabless form layout */
+
+hr {
+	display : none;
+}
+
+/* banner */
+#banner {
+	top: 0;
+	color: #474747; 
+	width: 765px;
+	padding: 0 0 0 1px;
+	margin: 0 auto 0 auto;
+}
+
+#banner .bannerflash {
+	height : 120px;
+}
+
+#banner .title {
+	padding : 5px 15px; 
+	font-weight : bold;
+	letter-spacing : 1px;
+	margin : 0px;
+	text-align: left;
+	/*font-size: 14px;*/ 
+}
+
+/* tag line*/
+#tagline {
+	position: absolute;
+	top: 50px;
+	padding-left: 200px;
+	color : #b8b8b8;
+	font-style : italic;
+	display : none;
+} 
+
+/* nav */
+#nav {
+	/*margin:0;*/
+	width: 765px;
+	margin: 0 auto 0 auto;
+    padding: 4px 0;
+    border-bottom: 1px dotted #474747;
+}
+
+#nav ul {
+	display: inline;
+} 
+
+#nav ul li {
+	border-left:1px dotted #474747;
+    list-style: none;	
+	display: inline;
+	padding: 3px 10px;
+}
+
+/* content */
+#content {
+	padding : 0;
+	margin: 0 auto 0 auto;
+	text-align: left;
+}
+#content p {
+	padding: 3px;	
+}
+
+.teaser {
+	border-top: 1px dotted #474747;
+	padding-top : 5px;
+}
+
+.sechd {
+	margin:0 0 5px 0;
+	padding: 2px 0 3px 5px;
+	border: 1px solid #474747;
+	background-color : #b8b8b8;
+}
+/* end content styles */
+
+/* main col style */
+.maincol {
+	padding : 10px 10px 5px 5px;
+	margin : 0;
+	border-right: 1px dotted #474747;
+}
+
+.xcol {
+	margin:  0 ;
+	padding : 10px 6px 0 10px; 
+}
+
+ul.horizontalList {
+	display: inline;	
+}
+
+li.horizontalList {
+	list-style: none;
+	display: inline;
+	padding: 5px 0 5px 5px;	
+}
+
+/* footer */
+#footer {
+	clear: both;
+	width: 735px;
+	margin: 0 auto 0 auto;
+	border-top: 1px dotted #474747;
+	padding : 15px;
+	text-align: center;
+}
+
+/* make larger and smaller style*/
+.font_control {
+	padding : 2px;
+	margin-left : 3px;
+	border: dotted 1px;
+}
+
+.ampLogo {
+	text-align : center;
+}
+
+#placeHolder {
+	padding: 12%;
+	text-align: center;
+}
+
+.photos {
+  float: left;
+  background: url(../../i/shadow.gif)  no-repeat bottom right;
+  margin: 10px 0 0 10px;
+  margin: 10px 0 0 5px;
+}
+
+.photos span {
+  background: url(../../i/shadow2.png)  no-repeat left top;
+  background: url(../../i/shadow2.gif)  no-repeat left top;
+  padding: 0px 5px 5px 0px;
+}
+
+.photos img {
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  padding: 4px;
+}
+
+.label {
+	text-align: center;
+}
+
+/* pop  up stuff */
+#frm_myForm {
+	width: 350px;
+}
+
+#frm_myForm div.row {
+	clear : both;
+  	padding-top : 5px;
+}
+
+#frm_myForm div.row span.label {
+  	float : left;
+  	width : 100px;
+  	text-align : right;
+}
+
+#frm_myForm div.row span.formw {
+  	float : right;
+ 	 width : 240px;
+  	text-align : left;
+}
+
+#frm_myForm div.row span.button {
+ 	margin: 0 auto;
+	float: center;
+}
+
+#frm_myForm fieldset {
+	margin: 0;
+	padding: 3px;
+	background-color: #E8F4F5;
+}
+
+#frm_myForm .comments div {
+	background-color: #88C5CA;
+	border: 1px solid #000;
+	padding: 5px;
+	margin-top: 10px;
+}
+
+#frm_myForm div.displayComment {
+	background-color: #C3E1E4;
+	border: 1px solid #000;
+	padding: 5px;
+	margin-top: 10px;
+}	
+
+#frm_myForm .comments h4,p {
+	margin: 0;
+}
+
+#frm_myForm a {
+	font-weight : bold;
+	color : #074348;
+	text-decoration : none;
+}
+
+#frm_myForm a:hover {
+	color : #0f8994;
+	text-decoration : underline;
+}
+
+#popUpFooter {
+	width: 100%;
+	margin: 25px auto 0 auto;
+	border-top: 1px dotted #474747;
+	text-align: center;
+}
+
+#headerSearch {
+	margin-top: 5px;
+}
+
+#headerFavs {
+	margin-top: 5px;
+}
+
+#headerAmp {
+	margin-top: 5px;
+}
+
+#headerLogin {
+	margin-top: 5px;
+}
+
+/* CSS for styling code examples */
+
+ol.code {
+	border: 1px solid #eee;
+	color: #333;
+	font: normal 100%/110% Courier, monospace;
+	margin: 0;
+	overflow: auto;
+	padding: 5px 5px 5px 45px;
+}
+
+ol.code li {
+	background-color: #f4f8fb;
+	margin: 0;
+	padding: 0 5px;
+	list-style-type: decimal;
+}
+
+ol.code li.source {
+	background-color: #fff;
+	/*list-style-type: none;*/
+	padding: 5px;
+	text-align: center;
+}
+
+ol.code li.credit {
+	list-style-type: none; 
+	font-size: 80%
+}
+
+ol.code li+li {
+	margin-top: 2px;
+}
+
+ol.code li.tab1 {padding-left: 15px;}
+ol.code li.tab2 {padding-left: 30px;}
+ol.code li.tab3 {padding-left: 45px;}
+ol.code li.tab4 {padding-left: 60px;}
+ol.code li.tab5 {padding-left: 75px;}
+ol.code li.tab6 {padding-left: 90px;}
+
+ol.code li code {
+	color: #333;
+}
+
+ol.code li.cmnt  code {
+	color: #824c88;
+}
+
+/* login form */
+#frm_myLogin {
+	width: 180px;
+}
+
+#frm_myLogin div.row {
+	clear : both;
+  	padding : 5px 0;
+}
+
+#frm_myLogin div.row span.label {
+  	float : left;
+  	width : 60px;
+  	text-align : right;
+}
+
+#frm_myLogin div.row span.formw {
+  	float : right;
+ 	width : 110px;
+  	text-align : left;
+}
+
+#frm_myLogin div.row span.button {
+ 	margin: 0 auto;
+	float: center;
+}
+
+#frm_myLogin fieldset {
+	margin: 0;
+	padding: 3px;
+	background-color: #E8F4F5;
+}
+
+/* content form */
+#frm_editContent {
+	width: 550px;
+}
+
+#frm_editContent div.row {
+	clear : both;
+  	padding : 5px 0;
+}
+
+#frm_editContent div.row span.label {
+  	float : left;
+  	width : 75px;
+  	text-align : right;
+}
+
+#frm_editContent div.row span.formw {
+  	float : right;
+ 	width : 460px;
+  	text-align : left;
+}
+
+#frm_editContent div.row span.button {
+ 	margin: 0 auto;
+	float: center;
+}
+
+#frm_editContent fieldset {
+	margin: 0;
+	padding: 3px;
+	background-color: #E8F4F5;
+}
+
+.google {
+	text-align:center; 
+	margin: 0 auto;
+	padding: 10px 0 0 0;
+}

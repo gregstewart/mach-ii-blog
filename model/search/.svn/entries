@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2006-04-27T14:31:45.178519Z"
+   url="file:///Users/gregstewart/Documents/subversion/gregs/trunk/model/search"
+   last-author="gregstewart"
+   kind="dir"
+   uuid="c4dbbc63-6a12-0410-8dcf-dd310189df30"
+   repos="file:///Users/gregstewart/Documents/subversion/gregs"
+   revision="1"/>
+<entry
+   committed-rev="1"
+   name="searchGateway.cfc"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="c78b6549606a76372c8e5955896235e1"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+<entry
+   committed-rev="1"
+   name="searchListener.cfc"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="03d0ebf2821c116ffee7465acf593e8a"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+</wc-entries>

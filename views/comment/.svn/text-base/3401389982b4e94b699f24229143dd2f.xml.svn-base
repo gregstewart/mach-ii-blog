@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Jason Sheedy</name>
+		<email>jason@jmpj.net</email>
+		<website>www.jmpj.net</website>
+		<link><a href="www.jmpj.net" title="go to: www.jmpj.net">www.jmpj.net</a></link>
+		<yourcomment>
+    Nice collection Greg. There's alot of useful stuff in there. - Jason
+  </yourcomment>
+		<date>{ts '2005-04-29 00:47:11'}</date>
+		<formatteddate>29, April 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

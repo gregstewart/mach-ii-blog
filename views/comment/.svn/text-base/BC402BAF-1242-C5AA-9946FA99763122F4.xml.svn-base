@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>Ken Auenson</name>		<email>ken@auenson.com</email>		<website>auenson.com</website>		<link>
+<a href="auenson.com" title="go to: auenson.com">auenson.com</a>
+</link>		<yourcomment>Actually, ALL of oracle SQL is case sensitive.  that can be a tricky thing to debug if you have never run across it before.  it bit me pretty hard when i moved from MS SQL Server 2k to Oracle!</yourcomment>		<date>{ts '2005-10-21 15:31:44'}</date>		<formatteddate>21, October 2005</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>Dave Carabetta</name>
+<email>cbetta@hotmail.com</email>
+<website/>
+<yourcomment>Just keep in mind that when you put an Oracle function around the column name, Oracle will no longer use any indexes defined for that column, which could significantly degrade performance under even moderate load. Your best bet is to just store the values in all upper case to begin with.</yourcomment>
+<date>{ts '2005-10-24 18:25:06'}</date>
+<formatteddate>24, October 2005</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>

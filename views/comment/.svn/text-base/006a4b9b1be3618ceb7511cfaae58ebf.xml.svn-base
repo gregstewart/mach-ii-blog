@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Ethan Cane</name>
+		<email>ethan@xmlstandards.org</email>
+		<website>http://www.xmlstandards.org/</website>
+		<link><a href="http://www.xmlstandards.org/" title="go to: http://www.xmlstandards.org/">http://www.xmlstandards.org/</a></link>
+		<yourcomment>I have installed this filter against the 'Merrimack' release of ColdFusion MX and encountered errors thereafter.
+
+Just to let you know.
+
+Pages are indeed compressed using the gzip algorithm, however 'Merrimack' appears to continually return error messages when requesting or refreshing a page.
+
+Ethan Cane
+Web Developer
+</yourcomment>
+		<date>{ts '2005-10-23 14:52:27'}</date>
+		<formatteddate>23, October 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

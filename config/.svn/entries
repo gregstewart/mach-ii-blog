@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2006-04-27T14:31:45.178519Z"
+   url="file:///Users/gregstewart/Documents/subversion/gregs/trunk/config"
+   last-author="gregstewart"
+   kind="dir"
+   uuid="c4dbbc63-6a12-0410-8dcf-dd310189df30"
+   repos="file:///Users/gregstewart/Documents/subversion/gregs"
+   revision="1"/>
+<entry
+   committed-rev="1"
+   name="blacklist.txt"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="a28163f8b92e3ebcba1c3428cbed8731"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+<entry
+   committed-rev="4"
+   name="mach-ii.xml"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="3a6f736acddc4f367f5d55e8317cadaf"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="4"
+   name="gregs@tcias.vm.bytemark.co.uk"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="9326321f62a8aa0ea30d75f9b1d760d9"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"
+   revision="4"/>
+</wc-entries>

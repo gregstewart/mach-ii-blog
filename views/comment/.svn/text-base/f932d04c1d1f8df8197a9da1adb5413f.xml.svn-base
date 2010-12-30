@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>fred</name>		<email>fbrown@edgewater.com</email>		<website/>		<link>
+<a href="" title="go to: "/>
+</link>		<yourcomment>Here is a command to update your complete index without having to specify file by file:mkvdk -collection [path to collection]/file -datapath [path to attachments]/*/*/* -update -verbose -synch--note the /* for each sub directory you want included</yourcomment>		<date>{ts '2005-06-09 14:19:42'}</date>		<formatteddate>09, June 2005</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>Greg Stewart</name>
+<email>gregs@tcias.co.uk</email>
+<website>http://gregs.tcias.co.uk/</website>
+<yourcomment>That's very handy thanks Fred!</yourcomment>
+<date>{ts '2005-07-01 13:13:02'}</date>
+<formatteddate>01, July 2005</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>

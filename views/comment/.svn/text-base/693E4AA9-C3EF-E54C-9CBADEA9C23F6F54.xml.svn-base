@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>Steve Powell</name>		<email>steve@powell.net</email>		<website/>		<link/>		<yourcomment>Yes. Oddly enough I'm working on a GIS system with lots of Postcode &amp; local Authority districts and streetname lookups. We suffer the same problems you do as no-one seems to be able to spell anything correctly anyomre. I picked up LEVENSHTEIN from this article http://www.sqlservercentral.com/columnists/mcoles/soundmatchingandaphonetictoolkit.asp</yourcomment>		<date>{ts '2005-08-24 15:06:19'}</date>		<formatteddate>24, August 2005</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>John Trovi</name>
+<email>johntrovi@yahoo.com</email>
+<website>currently in production</website>
+<yourcomment>Hi Steve,&#13;
+&#13;
+Thanks for putting up info on Soundex. We are currently have a shopping engine in development and would like to know if you know someone that would be interested in employing soundex to our datbase. We will mainly be selling products. I appreciate any help you can offer.&#13;
+&#13;
+Kind regards&#13;
+John Trovi</yourcomment>
+<date>{ts '2005-11-26 19:26:29'}</date>
+<formatteddate>26, November 2005</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>

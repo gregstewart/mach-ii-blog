@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>Greg Stewart</name>		<email>greg.stewart@gmail.com</email>		<website>http://gregs.tcias.co.uk</website>		<link>
+<a href="http://gregs.tcias.co.uk" title="go to: http://gregs.tcias.co.uk">http://gregs.tcias.co.uk</a>
+</link>		<yourcomment>Testing 1,2,3</yourcomment>		<date>{ts '2006-02-28 00:39:13'}</date>		<formatteddate>28, February 2006</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>Greg Stewart</name>
+<email>gregs@tcias.co.uk</email>
+<website>Blah</website>
+<yourcomment>BLah</yourcomment>
+<date>{ts '2006-05-26 00:45:30'}</date>
+<formatteddate>26, May 2006</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>

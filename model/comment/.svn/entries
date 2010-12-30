@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2006-04-27T14:31:45.178519Z"
+   url="file:///Users/gregstewart/Documents/subversion/gregs/trunk/model/comment"
+   last-author="gregstewart"
+   kind="dir"
+   uuid="c4dbbc63-6a12-0410-8dcf-dd310189df30"
+   repos="file:///Users/gregstewart/Documents/subversion/gregs"
+   revision="1"/>
+<entry
+   committed-rev="1"
+   name="commentDAO.cfc"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="c0a921987e57849043a65a70bdee6d7b"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+<entry
+   committed-rev="1"
+   name="commentDAO_xml.cfc"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="1a8a97eb405e916cf4350544156cec65"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+<entry
+   committed-rev="1"
+   name="commentListener.cfc"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="fd013b7ca310815ae0caf1a838ecec0a"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+<entry
+   committed-rev="1"
+   name="commentDAO_mysql.cfc"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="2767044b873ad4198bf0a4fd725ef47a"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+<entry
+   committed-rev="1"
+   name="comment.cfc"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="e057839f0e22458a16ef15d9a7b9ff55"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+</wc-entries>

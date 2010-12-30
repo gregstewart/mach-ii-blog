@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Nick Lansbury</name>
+		<email>nick.lansbury@gmail.com</email>
+		<website>n/a</website>
+		<link><a href="n/a" title="go to: n/a">n/a</a></link>
+		<yourcomment>the line that says
+<cfset keywords=#qGetItems.prefsize#>
+should say
+<cfset keywords=#qGetItems.style#></yourcomment>
+		<date>{ts '2005-05-31 16:09:18'}</date>
+		<formatteddate>31, May 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

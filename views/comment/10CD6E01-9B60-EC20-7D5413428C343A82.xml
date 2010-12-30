@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Neculai Macarie</name>
+		<email>mail@mail.com</email>
+		<website></website>
+		<link><a href="" title="go to: "></a></link>
+		<yourcomment>It's IE Win only because support is incomplete on Mac for conditional compilation.</yourcomment>
+		<date>{ts '2005-07-02 19:55:34'}</date>
+		<formatteddate>02, July 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

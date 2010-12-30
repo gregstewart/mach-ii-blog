@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>calin</name>
+		<email>c@php9.com</email>
+		<website>http://php9.bloghi.com</website>
+		<link><a href="http://php9.bloghi.com" title="go to: http://php9.bloghi.com">http://php9.bloghi.com</a></link>
+		<yourcomment>how abour pipe-ing multiple greps? It doesn't work! this does not work:
+
+tail -f access_log|grep aaa|grep -v bbb
+
+Any solution on this one?</yourcomment>
+		<date>{ts '2005-08-06 18:21:48'}</date>
+		<formatteddate>06, August 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

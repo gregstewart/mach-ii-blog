@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>Barney</name>		<email>bboisvert@gmail.com</email>		<website>http://www.barneyb.com/</website>		<link>
+<a href="http://www.barneyb.com/" title="go to: http://www.barneyb.com/">http://www.barneyb.com/</a>
+</link>		<yourcomment>The -s option (for summary) is the same as --max-depth=0.  And since the default argument is . (the current directory), explicitly specifying * (all files in the current directory), you can use the pair to get the same result as your example showed with a lot less typing.  Also, you can use -h for --human-readable, leading to my most common utilization: `du -hs *`</yourcomment>		<date>{ts '2005-08-26 01:13:12'}</date>		<formatteddate>26, August 2005</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>Greg Stewart</name>
+<email>gregs@tcias.co.uk</email>
+<website>http://www.barneyb.com/</website>
+<yourcomment>As ever thanks for the extra info!</yourcomment>
+<date>{ts '2005-08-26 15:11:19'}</date>
+<formatteddate>26, August 2005</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>

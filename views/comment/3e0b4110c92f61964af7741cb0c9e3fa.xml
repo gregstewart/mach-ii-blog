@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Mohammed Samiuddin</name>
+		<email>samiubaid@yahoo.com</email>
+		<website>www.castleol.com</website>
+		<link><a href="www.castleol.com" title="go to: www.castleol.com">www.castleol.com</a></link>
+		<yourcomment>want the difference between oracle and ms sql?</yourcomment>
+		<date>{ts '2005-07-12 16:20:14'}</date>
+		<formatteddate>12, July 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

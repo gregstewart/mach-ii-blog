@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2006-04-27T14:31:45.178519Z"
+   url="file:///Users/gregstewart/Documents/subversion/gregs/trunk/model"
+   last-author="gregstewart"
+   kind="dir"
+   uuid="c4dbbc63-6a12-0410-8dcf-dd310189df30"
+   repos="file:///Users/gregstewart/Documents/subversion/gregs"
+   revision="1"/>
+<entry
+   committed-rev="3"
+   name="applicationConstantsBean.cfc"
+   text-time="2006-05-26T05:12:06.000000Z"
+   committed-date="2006-07-03T13:07:50.726402Z"
+   checksum="ccc00e9c1072c8ef85cd1f0e6a6f6a80"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"
+   revision="3"/>
+<entry
+   name="cms"
+   kind="dir"/>
+<entry
+   name="comment"
+   kind="dir"/>
+<entry
+   name="dao"
+   kind="dir"/>
+<entry
+   committed-rev="1"
+   name="applicationListener.cfc"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="5b453540627b9a38875b75a31dc607ea"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+<entry
+   name="main"
+   kind="dir"/>
+<entry
+   name="search"
+   kind="dir"/>
+<entry
+   name="resource"
+   kind="dir"/>
+<entry
+   name="login"
+   kind="dir"/>
+<entry
+   name="photos"
+   kind="dir"/>
+<entry
+   name="category"
+   kind="dir"/>
+<entry
+   name="udf"
+   kind="dir"/>
+<entry
+   name="user"
+   kind="dir"/>
+</wc-entries>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+	This work is licensed under a Creative Commons License.
+
+	License: http://creativecommons.org/licenses/by/1.0/
+
+	You are free:
+
+	to copy, distribute, display, and perform the work
+	to make derivative works
+	to make commercial use of the work
+
+	Under the following conditions:
+
+	Attribution. You must give the original author credit
+
+	Author:  Dean Edwards/2004
+	Web:     http://dean.edwards.name/
+-->
+
+<!-- keeping code tidy! -->
+
+<!-- w3c compliance for microsoft internet explorer -->
+
+<!-- 0.1 -->
+
+<public:component xmlns:public="urn:HTMLComponent" lightweight="true">
+<script type="text/javascript">
+//<![CDATA[ // preserve xml
+
+// this behavior should only be attached to html style tags
+//  it simply preserves an unparsed style sheet.
+
+// fix for IE5.x
+if (!element.ownerDocument) element.ownerDocument = element.document;
+
+// make sure this is not a style sheet created by ie7
+if (innerHTML.replace(/^\s*/, "").slice(0, 3) != "ie7") {
+	// save the original text in the style sheet (before it has been
+	//  parsed by explorer) we'll process this later
+	if (!ownerDocument.ie7StyleSheets) ownerDocument.ie7StyleSheets = [];
+	ownerDocument.ie7StyleSheets[ownerDocument.styleSheets.length - 1] = innerHTML;
+}
+//]]>
+</script>
+</public:component>
+<!-- http://dean.edwards.name/ -->

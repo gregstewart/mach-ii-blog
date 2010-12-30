@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>neil</name>
+		<email>neilsroberts@gmail.com</email>
+		<website></website>
+		<link><a href="" title="go to: "></a></link>
+		<yourcomment>don't go greg please don't leave us, you'll miss the rain and the cold. Sunshine and cold beer can get very boring after a while</yourcomment>
+		<date>{ts '2005-05-27 17:14:58'}</date>
+		<formatteddate>27, May 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

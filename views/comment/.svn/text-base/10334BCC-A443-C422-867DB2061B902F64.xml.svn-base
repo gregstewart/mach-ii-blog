@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>Niklas Richardson</name>		<email>niklas@prismix.com</email>		<website>http://www.prismix.com/</website>		<link>
+<a href="http://www.prismix.com/" title="go to: http://www.prismix.com/">http://www.prismix.com/</a>
+</link>		<yourcomment>Also, using the MySQL Administrator you can tell the MySQL server to always use the old password hashing method.  Then, whenever you create new users it will always use the old method.  That's when you use any GUI.-Niklas</yourcomment>		<date>{ts '2005-06-09 11:49:09'}</date>		<formatteddate>09, June 2005</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>Greg Stewart</name>
+<email>gregs@tcias.co.uk</email>
+<website>http://gregs.tcias.co.uk/</website>
+<yourcomment>Did not know that! Thanks Niklas!</yourcomment>
+<date>{ts '2005-07-01 13:08:19'}</date>
+<formatteddate>01, July 2005</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>

@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+	This work is licensed under a Creative Commons License.
+
+	License: http://creativecommons.org/licenses/by/1.0/
+
+	You are free:
+
+	to copy, distribute, display, and perform the work
+	to make derivative works
+	to make commercial use of the work
+
+	Under the following conditions:
+
+	Attribution. You must give the original author credit
+
+	Author:  Dean Edwards/2004
+	Web:     http://dean.edwards.name/
+-->
+
+<!-- keeping code tidy! -->
+
+<!-- w3c compliance for microsoft internet explorer -->
+
+<!-- 0.3a (alpha release) 2004/03/05 -->
+
+<public:component xmlns:public="urn:HTMLComponent">
+<public:attach event="oncontentready" handler="fixEverything"/>
+<script type="text/javascript">
+//<![CDATA[ // preserve xml
+// fix for IE5.x
+var isIE5 = !element.ownerDocument;
+if (isIE5) element.ownerDocument = element.document;
+
+/* ########## debug
+ownerDocument.attachEvent("onmouseover", function() {
+	window.status = event.srcElement.className;
+});
+########## */
+
+// hide document contents for faster rendering
+//  (and avoid screen flicker)
+// use currentStyle because this can be turned off in ie7-.css
+with (ownerDocument.body) style.display = currentStyle.display;
+
+// parse all style sheets into a form that explorer can understand.
+// this means converting all style selectors that explorer does not
+//  recognise into classes...
+function fixEverything() {
+try {
+	// only bind to html body
+	if (scopeName != "HTML") return;
+
+	// can't support IE5.0 (yet)
+	if (!Function.apply) {
+		style.display = "block";
+		return;
+	}
+
+	// HTML or XML?
+	var isXML = Boolean(ownerDocument.mimeType == "XML Document");
+
+	// identify the root of the document
+	var documentElement = (isXML) ? ownerDocument.body.children[0] : ownerDocument.documentElement;
+	var styleRootElement = (isXML) ? documentElement : ownerDocument.body;
+
+	// -----------------------------------------------------------------------
+	// constants
+	// -----------------------------------------------------------------------
+
+	var REMOVE = "";
+	var SEPARATOR = "\n";
+	var PREFIX = "ie7_";
+	var HEADER = (isXML) ? "*{margin:0}\n" : "";
+	var IE7_CLASS = "ie7-class";
+	var IE7_DYNAMIC = "ie7-dynamic";
+	// a word-break is represented by "\b" in javascript regular expressions.
+	//  for some reason we need to escape this TWICE for an html document
+	//  on ie6. only once for xml. huh?
+	var BREAK = (isXML || isIE5) ? "\\b" : "\\\\b";
+
+	// -----------------------------------------------------------------------
+	// onpropertychange - all elements
+	// -----------------------------------------------------------------------
+
+	function watch() {
+		switch (event.propertyName) {
+			case "style.ie7-class":
+				// trigger for allocation of an ie7 class
+				// the class name will now change
+				addClass(event.srcElement);
+				break;
+			case "style.ie7-dynamic":
+				// trigger for allocation of a dynamic ie7 class
+				//  event handlers will be attached
+				addDynamicClass(event.srcElement);
+				break;
+			case "style.ie7-minWidth":
+			case "style.ie7-maxWidth":
+			case "style.ie7-minHeight":
+			case "style.ie7-maxHeight":
+				watchMinMax(event.srcElement, event.propertyName.slice(10));
+				break;
+		}
+	};
+
+	function watchMinMax(element, attribute) {
+		ie7Elements[element.uniqueID][attribute] = parseInt(element.style["ie7-"+attribute]);
+		// onresize event is captured to keep the property dynamic
+		addDynamicClass(element, "resize");
+	};
+
+	function addClass(element, classID) {
+		if (!classID) classID = element.style[IE7_CLASS];
+		if (classID) element.className += " " + PREFIX + classID;
+	};
+
+	function removeClass(element, classID) {
+		element.className = element.className.replace(new RegExp("\\s" + PREFIX + classID + "\\b", "g"), REMOVE);
+	};
+
+	function addDynamicClass(element, classID) {
+		if (!classID) classID = element.style[IE7_DYNAMIC];
+		for (var event in ie7Handlers[classID]) {
+			element.attachEvent(event, ie7Handlers[classID][event]);
+		}
+		ie7Elements[element.uniqueID].handlers.push(classID);
+		if (classID == "resize") ie7Resize[element.uniqueID] = true;
+	};
+
+	function removeDynamicClass(element, classID) {
+		for (var event in ie7Handlers[classID]) {
+			element.detachEvent(event, ie7Handlers[classID][event]);
+		}
+	};
+
+	// -----------------------------------------------------------------------
+	//  ie7 PRIVATE
+	// -----------------------------------------------------------------------
+
+	var IE7_CLASSES = /\sie7_\d+/;
+
+	var ie7Expressions = [];
+	var uniqueID = 3; // 0:first-child; 1:last-child; 2:root
+
+	var ie7Attributes = "";
+
+	var ie7Classes = {};
+	function ie7Classes_add(selector, test) {
+		if (!selector) selector = "*";
+		if (test == true && selector.charAt(0) == "." && !/\s/.test(selector)) return selector;
+		var rule = ie7Classes[selector];
+		if (!rule) rule = ie7Classes[selector] = {};
+		var classID = rule[test];
+		if (!classID) {
+			classID = rule[test] = uniqueID++;
+			var expression = classID;
+			if (test != true) expression = "(" + test + ")?" + expression + ":0";
+			ie7Expressions.push(selector + "{-" + IE7_CLASS + ":expression(" + expression + ")}");
+		}
+		return "." + PREFIX + classID;
+	};
+
+	var ie7Tests = {};
+	function ie7Tests_add(attr, expression) {
+		var test = ie7Tests[attr];
+		if (!test) test = ie7Tests[attr] = {classIDs:{}, expressions:[]};
+		var classID = test.classIDs[expression];
+		if (!classID) {
+			classID = test.classIDs[expression] = uniqueID++;
+			test.expressions.push("if(" + expression + ")this.className+=' " + PREFIX + classID + "'");
+		}
+		return "." + PREFIX + classID;
+	};
+
+	ie7Resize = {};
+	function ie7_onresize() {
+		with (this) {
+			var ie7Style = ie7Elements[uniqueID];
+			if (ie7Style && offsetWidth) {
+				if (ie7Style.maxWidth != null && offsetWidth > ie7Style.maxWidth)
+					style.width = ie7Style.maxWidth;
+				if (ie7Style.minWidth != null && offsetWidth < ie7Style.minWidth)
+					style.width = ie7Style.minWidth;
+			}
+			if (ie7Style && offsetHeight) {
+				if (ie7Style.maxHeight != null && offsetHeight > ie7Style.maxHeight)
+					style.height = ie7Style.maxHeight;
+				if (ie7Style.minHeight != null && offsetHeight < ie7Style.minHeight)
+					style.height = ie7Style.minHeight;
+			}
+		}
+	};
+	window.attachEvent("onresize", function() {
+		for (var uniqueID in ie7Resize) ie7_onresize.apply(window[uniqueID]);
+	});
+
+	var ie7Handlers = {resize:{onresize: ie7_onresize}};
+	var ie7Active = {element:null, classID:0};
+	function ie7Handlers_add(onEvent, offEvent, classID) {
+		ie7Handlers[classID] = {};
+		if (onEvent == "onmousedown") {
+			ie7Handlers[classID][onEvent] = function() {
+				ie7Active.element = event.srcElement;
+				ie7Active.classID = classID;
+				addClass(event.srcElement, classID);
+			};
+		} else {
+			ie7Handlers[classID][onEvent] = function() {
+				addClass(event.srcElement, classID);
+			};
+		}
+		if (offEvent) ie7Handlers[classID][offEvent] = function() {
+			removeClass(event.srcElement, classID);
+		};
+	};
+
+	var ie7Elements = {};
+	function ie7Elements_add(element) {
+		// fix for ie5.5
+		if (!element.ownerDocument) element.ownerDocument = ownerDocument;
+		// watch property changes
+		element.attachEvent("onpropertychange", watch);
+		// create private data
+		ie7Elements[element.uniqueID] = {handlers:[]};
+	};
+
+	function removeEventHandlers(element) {
+		with (ie7Elements[element.uniqueID].handlers) while (length) removeDynamicClass(element, pop());
+	};
+
+	// this is called once from document.recalc()
+	//  it initialises all elements in the document
+	//  and prepares them for ie7 style application
+	function ie7Apply(element) {
+		with (element) {
+			// reset the class name - we are going to rebuild it
+			if (ie7Elements[uniqueID]) { // initialised?
+				className = className.replace(IE7_CLASSES, REMOVE);
+				// we must remove event handlers in case they are
+				//  not needed according to new css rules
+				// rules will change if document structure changes
+				removeEventHandlers(element);
+			} else {
+				// if this is a new element then register it
+				ie7Elements_add(element);
+			}
+			// a poor implementation of getElementsByTagName (comment nodes are included)
+			//  means we have to loop through children to detect elements
+			// during this loop we can allocate two ie7 classes.
+			// these identify first and last chid nodes.
+			var currentElement;
+			for (var i = 0; i < children.length; i++) {
+				if (children[i].tagName != "!") { // how crap is this?
+					// recursively apply this function to all child elements
+					arguments.callee(children[i]);
+					// extend the element's interface with two properties.
+					// these are nextElement and previousElement
+					// (to compliment parentElement).
+					// these properties are used for adjacent selector
+					//  tests (adjacent+sibling and adjacent+sibling)
+					if (currentElement) {
+						currentElement.nextElement = children[i];
+						children[i].previousElement = currentElement;
+					} else {
+						addClass(children[i], CLASS_IDS["first-child"]);
+						children[i].previousElement = null;
+					}
+					currentElement = children[i];
+				}
+			}
+			if (currentElement) {
+				addClass(currentElement, CLASS_IDS["last-child"]);
+				currentElement.nextElement = null;
+			}
+			// apply attribute tests
+			for (var attr in ie7Tests) ie7Tests[attr].apply(element);
+		}
+	};
+
+	// -----------------------------------------------------------------------
+	//  document.recalc()
+	// -----------------------------------------------------------------------
+
+	// allow the document to be "refreshed"
+	//  this means recalculating all of ie7's pseudo-classes
+
+	// this is pretty complicated. for several reasons.
+	// the first is that we MUST unload expressions after
+	//  they have been applied. if we don't do this then
+	//  page performance is seriously degraded.
+	// explorer is constantly evaluating expressions contained
+	//  in a style sheet (for each event - even mousemove).
+	// because these expressions alter the class name of
+	//  elements in the document, further evaluations of these
+	//  expressions are triggered. it's not called a cacading
+	//  style sheet for nothing!
+	// so we must unload ie7 expressions.
+	// how?
+	// how do we know when the cascade is complete?
+	// after (arduous) experimentation i discovered that css
+	//  rules are applied in the order they appear in the style
+	//  sheet. pretty reasonable.
+	// we can append an expression to the end of the style
+	//  sheet and call back document.recalc to signal
+	//  that the style sheet can be unloaded.
+	// mmm. problem. can't unload the style sheet cos an expression
+	//  in it is currently being evaluated.
+	// to get round this we do a little trick. we set the class
+	//  name of document.body to an ie7 class.
+	// this triggers an expression in another style sheet that
+	//  in turn unloads the style sheet containing the real
+	//  expressions! i told you it was complicated.
+	// it gets worse.
+	// because ie7 expressions alter class names they affect the
+	//  cascade. so we can't tell when all of the rules have been
+	//  applied.
+	// so we load them one at a time...
+	// oh. and sometimes they get stuck.. (for IE5)
+	// so we have to flush the rules.
+	// unbelievably, with all this jiggery-pokery. it works.
+	// well it works on the two computers i've got at home anyway
+	//  (one fast, one slow).
+	// if you got this far you must be pretty interested in the code.
+	// so here it is...
+
+	var currentRule = 0;
+	// use a password so we now it's an internal call
+	var password = Number(new Date);
+	// preserve existing recalc method
+	var _recalc7 = ownerDocument.recalc;
+	// override document.recalc()
+	ownerDocument.recalc = function () {
+		if (arguments[0] == password) {
+			// remove the unload id from document.body
+			with (this.body) className = className.replace(new RegExp("\\s" + unloadClass + "\\b", "g"), "");
+			// process the next expression
+			if (currentRule < ie7Expressions.length) {
+				// load the next rule
+				ie7StyleSheet.cssText = ie7Expressions[currentRule++] + SEPARATOR + unloadRule;
+				// this seems to fix a loading problem for ie5.5 - i don't really understand it
+				flush.object = this.body;
+				setTimeout(flush, 0);
+			} else {
+				// finished loading expressions
+				// clear the style sheet
+				ie7StyleSheet.cssText = "";
+				this.body.style.display = "block";
+			}
+		} else {
+			// this a real recalc() - unless called with recalc(7)
+			if (arguments[0] != 7) _recalc7.apply(this, arguments);
+			// now do an ie7 recalc()
+			currentRule = 0;
+			addClass(documentElement, CLASS_IDS["root"]);
+			if (isXML) addClass(this.body, CLASS_IDS["root"]);
+			ie7Apply(styleRootElement);
+			// call this function again with the password
+			arguments.callee.call(this, password);
+		}
+	};
+	// setting this flag tells ie7 to detect changes in the
+	//  document structure and refresh style settings.
+	// typically, content is added in program loops, so
+	//  setting this to true would degrade performance for
+	//  most situations.
+	// you should manually refresh style settings by calling
+	//  document.recalc() after manipulating the dom structure
+	//  of the document
+	// this doesn't do anything yet...
+	ownerDocument.autoRefresh = false;
+
+	ownerDocument.attachEvent("onmouseup", function() {
+		with (ie7Active) {
+			if (element) removeClass(element, classID);
+			element = null;
+		}
+	});
+
+	// for sniffers
+	if (isIE5) ownerDocument.compatMode = "BackCompat";
+
+	// force a reload of the next ie7 class rule
+	function flush() {
+	try {
+		// load the next rule
+		with (arguments.callee.object) className += " " + unloadClass;
+	} catch (error) {
+		window.document.body.style.display = "block";
+	}};
+
+	// -----------------------------------------------------------------------
+	//  parse a style sheet
+	// -----------------------------------------------------------------------
+
+	function parseStyleSheet(cssText) {
+		return decode(
+		       parseNamespaces(
+		       parseSelectors(
+		       parseCSSText(
+		       removeWhiteSpace(
+		       removeStringsAndComments(
+		       cssText))))));
+	};
+
+	// -----------------------------------------------------------------------
+	//  parse w3c namespaces to explorer style
+	// -----------------------------------------------------------------------
+
+	var W3C_NAMESPACE = /\|/g;
+	var IE7_NAMESPACE = "\\:";
+	var W3C_UNIVERSAL = /\|(\.)/g;
+	var IE7_UNIVERSAL = "|*$1";
+	function parseNamespaces(cssText) {
+		return cssText.replace(
+			W3C_UNIVERSAL, IE7_UNIVERSAL).replace(
+			W3C_NAMESPACE, IE7_NAMESPACE);
+	};
+
+	// -----------------------------------------------------------------------
+	//  parse all selectors
+	// -----------------------------------------------------------------------
+
+	function parseSelectors(cssText) {
+		return parseDynamicClasses(
+		       parseMultipleClasses(
+		       parseRelationships(
+		       parseAttributeSelectors(
+		       parseClassAndId(
+		       parsePseudoClasses(
+	       cssText))))));
+	};
+
+	// -----------------------------------------------------------------------
+	//  parse attributes
+	// -----------------------------------------------------------------------
+
+	// parse out min/max-width/height and add expressions to perform the
+	//  same task. for those elements with min/max properties set, the
+	//  onresize event is captured to keep the property dynamic.
+
+	// for ie5, we replace display:list-item with display:block;margin-left:2em
+
+	var CSSTEXT = /\{[^\}]*\}/g;
+	var W3C_MIN_MAX = /([^\}\{]*)(\{[^\}]*)(min-width|min-height|max-width|max-height)\s*:\s*([^;|\n|\}]*)/;
+	function IE7_MIN_MAX(match, selector, prelim, attribute, value) {
+		// convert css names to javascript names (eg "min-width" to "minWidth")
+		with (attribute) attribute = slice(0, 3) + charAt(4).toUpperCase() + slice(5);
+		// add the min/maxWidth/Height expression to the ie7 style sheet
+		ie7Attributes += selector + "{-ie7-" + attribute + ":expression('" + value + "')}";
+		return selector + prelim;
+	};
+	var W3C_LIST_ITEM = /(display\s*:\s*)list-item/g;
+	var IE7_LIST_ITEM = "$1block;margin-left:2em";
+
+	function parseAttributes(cssText) {;
+		// fix display:list-item for ie5
+		if (isIE5) cssText = cssText.replace(W3C_LIST_ITEM, IE7_LIST_ITEM);
+		// provide support for min/max-width/height
+		while (W3C_MIN_MAX.test(cssText)) cssText = cssText.replace(W3C_MIN_MAX, IE7_MIN_MAX);
+		return cssText;
+	};
+
+	function parseCSSText(cssText) {
+		// replace abbr with ie7_abbr
+		if (!isXML) cssText = cssText.replace(/([\s\|\}>\+~])abbr\b/gi, "$1." + PREFIX + "ABBR");
+		return parseAttributes(cssText).replace(CSSTEXT, ENCODE);
+
+	};
+
+	// -----------------------------------------------------------------------
+	//  parse out comments and strings
+	// -----------------------------------------------------------------------
+
+	// create the complex RegExp using a string (avoids a crash in IE5.0)
+	var STRINGS_COMMENTS = new RegExp("(\\/\\*[^\\000]*?\\*\\/)|('[^'\\n]*'|\"[^\"\\n]*\")", "g");
+	var DANGEROUS = /@(namespace|import)[^;\n]+[;\n]/g;
+	function removeStringsAndComments(cssText) {
+		return cssText.replace(
+			// encode strings, comments get removed
+			STRINGS_COMMENTS, ENCODE).replace(
+			// parse out @namespace/@import (restating them crashes explorer!)
+			DANGEROUS, REMOVE);
+	};
+
+	// -----------------------------------------------------------------------
+	//  parse out white-space
+	// -----------------------------------------------------------------------
+
+	var WHITESPACE = /^\s+|\s*([\{\}\+\,>\s])\s*|\s+$/g;
+	function removeWhiteSpace(cssText) {
+		return cssText.replace(WHITESPACE, "$1");
+	};
+
+	// -----------------------------------------------------------------------
+	//  parse pseudo-classes
+	// -----------------------------------------------------------------------
+
+	// we'll only parse out :root, :first-child and :last-child.
+	// the dynamic pseudo-classes (:active, :focus and :hover) are
+	//  handled separately.
+
+	var CLASS_IDS = {"first-child":"0", "last-child":"1", "root":"2"};
+	var W3C_PSEUDO_CLASSES = /:(first-child|last-child|root)/g;
+	function IE7_PSEUDO_CLASSES(match, className) {
+		return "." + PREFIX + CLASS_IDS[className];
+	};
+
+	function parsePseudoClasses(cssText) {
+		return cssText.replace(W3C_PSEUDO_CLASSES, IE7_PSEUDO_CLASSES);
+	};
+
+	// -----------------------------------------------------------------------
+	//  parse class and id selectors
+	// -----------------------------------------------------------------------
+
+	// this parse is for special [attr="value"] selectors where the
+	//  "attr" part is either "class" or "id".
+	// they are converted to ".value" and "#value" respectively.
+
+	var W3C_CLASS_ID =/\[\s*(id|class)\s*=\s*([^\]]*)\s*\]/gi;
+	function IE7_CLASS_ID(match, type, name) {
+		// check the name is not an encoded string
+		if (name.charAt(0) == "@") name = $[name.slice(1)].slice(1, -1);
+		return ((type.toLowerCase() == "id") ? "#" : ".") + name;
+	};
+
+	function parseClassAndId(cssText) {
+		return cssText.replace(W3C_CLASS_ID, IE7_CLASS_ID);
+	};
+
+	// -----------------------------------------------------------------------
+	//  parse attribute selectors
+	// -----------------------------------------------------------------------
+
+	// replace [attr="value"] with .ie7_id
+
+	var W3C_ATTRIBUTE = /\[\s*([^~=\]]+)\s*(~?=)?\s*([^\]]+)?\s*\]/g;
+	var QUOTED = /([\'\"])[^\1]*\1/;
+	function IE7_ATTRIBUTE(match, attr, compare, value) {
+		// if the value was quoted then it has now been encoded to @nn.
+		// decode the string
+		if (/^@\d+/.test(value)) value = $[value.slice(1) - 1];
+		// build the test expression.
+		// e.g. this.getAttribute("test")=="value";
+		// this expression is evaluated against the element
+		//  in document.recalc()
+		var expression = "";
+		switch (compare) {
+			case "=":
+				if (!QUOTED.test(value)) value = "'" + value + "'";
+				expression = "attr==" + value;
+				break;
+			case "~=":
+				if (QUOTED.test(value)) value = value.slice(1, -1);
+				expression = "/\\b" + value + "\\b/.test(attr)";
+				break;
+			default:
+				expression = "attr";
+		}
+		return ie7Tests_add(attr, expression);
+	};
+
+	function parseAttributeSelectors(cssText) {
+		return cssText.replace(W3C_ATTRIBUTE, IE7_ATTRIBUTE);
+	};
+
+	// -----------------------------------------------------------------------
+	//  parse relationship selectors (parent/child, adjacent/sibling)
+	// -----------------------------------------------------------------------
+
+	// replace child > selector with .ie7_id
+	// replace child + selector with .ie7_id
+	// replace child ~ selector with .ie7_id (this doesn't work yet)
+
+	var W3C_RELATIONSHIP = /([^>\+~\}\,]+)(>|\+|~)([^>\+~\{\s\,:]+)/;
+	function IE7_RELATIONSHIP (match, selector, type, target) {
+		selector = ie7Classes_add(selector, true);
+		if (type == ">") target = selector + " " + target;
+		type = (type == ">") ? "parent" : (type == "+") ? "previous" : "next"; // next is wrong -@DRE
+		return ie7Classes_add(target, type + "Element&&/" + BREAK + selector.slice(1) + BREAK + "/.test("+ type + "Element.className)");
+	};
+
+	function parseRelationships(cssText) {
+		while (W3C_RELATIONSHIP .test(cssText)) cssText = cssText.replace(W3C_RELATIONSHIP , IE7_RELATIONSHIP);
+		return cssText;
+	};
+
+	// -----------------------------------------------------------------------
+	//  parse mulitples class names
+	// -----------------------------------------------------------------------
+
+	// replace .class1.class2 with .ie7_id
+
+	var W3C_MULTIPLE_CLASSES = /(\.[^\.\}\s\#\,]+)\.([^\.\{\s\#\,:]+)/;
+	function IE7_MULTIPLE_CLASSES(match, class1, class2) {
+		return ie7Classes_add(class1, "/" + BREAK + class2 + BREAK + "/.test(className)");
+	};
+
+	function parseMultipleClasses(cssText) {
+		while (W3C_MULTIPLE_CLASSES.test(cssText)) {
+			cssText = cssText.replace(W3C_MULTIPLE_CLASSES, IE7_MULTIPLE_CLASSES);
+		}
+		return cssText;
+	};
+
+	// -----------------------------------------------------------------------
+	//  parse dynamic pseudo-classes
+	// -----------------------------------------------------------------------
+
+	// replace :active, :focus and :hover with .ie7_id
+
+	var W3C_DYNAMIC_CLASSES = /([^\{\}\,:]*):(active|focus|hover)/g;
+	function IE7_DYNAMIC_CLASSES(match, selector, className) {
+		ie7Expressions.push(selector + "{-" + IE7_DYNAMIC + ":expression(" + uniqueID + ")}");
+		switch (className) {
+			case "active":  // this needs to be amended -@DRE
+				ie7Handlers_add("onmousedown", null, uniqueID);
+				break;
+			case "focus":
+				ie7Handlers_add("onfocus", "onblur", uniqueID);
+				break;
+			case "hover":
+				ie7Handlers_add("onmouseover", "onmouseout", uniqueID);
+				break;
+		}
+		return "." + PREFIX + uniqueID++;
+	};
+
+	function parseDynamicClasses(cssText) {
+		return cssText.replace(W3C_DYNAMIC_CLASSES, IE7_DYNAMIC_CLASSES);
+	};
+
+	// -----------------------------------------------------------------------
+	// encoding
+	// -----------------------------------------------------------------------
+
+	// a style sheet must be prepared for parsing.
+	// this means stripping out comments and removing
+	//  (and storing) strings.
+	// this is necessary because strings and comments
+	//  may contain tokens that affect parsing.
+	// blocks of css text are also extracted and stored
+	//  to leave just css selectors and encoded css text.
+
+	var $ = [];
+	function ENCODE(match) {
+		// encode strings, remove comments
+		return (match.charAt(0) == "/") ? "" : (match.charAt(0) == "{") ? "{" + $.push(match) + "}" : "@" + $.push(match);
+	};
+	function DECODE(match, key) {
+		return $[key - 1];
+	};
+
+	// put strings back
+	var ENCODED_STRINGS = /@(\d+)/g;
+	var ENCODED_CSSTEXT = /\{(\d+)\}/g;
+	function decode(cssText) {
+		return cssText.replace(
+			ENCODED_CSSTEXT, DECODE).replace(
+			ENCODED_STRINGS, DECODE);
+	};
+
+	// -----------------------------------------------------------------------
+	//  loading css
+	// -----------------------------------------------------------------------
+
+	// process all loaded style sheets.
+	// parse all tokens that explorer does not understand
+	//  into ie7 classes.
+	function getCSSText(styleSheet, ie7Text) {
+		var cssText = "";
+		for (var i = 0; i < styleSheet.imports.length; i++) {
+			cssText += arguments.callee(styleSheet.imports[i]);
+		}
+		return cssText + ((styleSheet.href) ? loadStyleSheet(styleSheet) : ie7Text);
+	};
+
+	var httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+	function loadStyleSheet(styleSheet) {
+		httpRequest.open("get", styleSheet.href, false);
+		httpRequest.send();
+		return httpRequest.responseText;
+	};
+
+	var styleSheets = ownerDocument.styleSheets;
+	if (!ownerDocument.ie7StyleSheets) ownerDocument.ie7StyleSheets = [];
+	for (var i = 0; i < styleSheets.length; i++) {
+		var cssText = (i == 0) ? HEADER : "";
+		// load and parse the style sheet text
+		cssText += getCSSText(styleSheets[i], ownerDocument.ie7StyleSheets[i]);
+		styleSheets[i].cssText = parseStyleSheet(cssText);
+	}
+	// add ie7 attribute expressions to the main expressions list
+	ie7Expressions.push(parseSelectors(ie7Attributes));
+
+	// -----------------------------------------------------------------------
+	//  create ie7 style sheets
+	// -----------------------------------------------------------------------
+
+	// create two style sheets. the first contains ie7
+	//  class rules which are loaded sequentially,
+	//  the second contains a rule that enables
+	//  the unloading of the first style sheet.
+
+	// this style sheet will contain all ie7 class rules
+	var ie7StyleSheet = ownerDocument.createStyleSheet();
+	ie7StyleSheet.cssText = "ie7{}";
+
+	var body = (isXML) ? "html\\:" : "";
+	body += "body";
+
+	// this is the unloader
+	var unloadClass = ie7Classes_add(body, true).slice(1);
+	var unloadRule = ie7Expressions.pop();
+	var ie7Unloader = ownerDocument.createStyleSheet();
+	ie7Unloader.cssText = "ie7{}\n" + body + "." + unloadClass + "{-ie7-unload:expression(document.recalc(" + password + "))}";
+
+	// fix w3x namespaces for expressions
+	if (ie7Expressions.length) ie7Expressions = parseNamespaces(ie7Expressions.join("@")).split("@");
+	//alert("No. of expressions:"+ie7Expressions.length+"\n"+ie7Expressions.join("\n"));
+
+	// build attribute tests [attr="value"]
+	for (var attr in ie7Tests) {
+		ie7Tests[attr] = new Function("var attr=this.getAttribute('" + attr + "');" + ie7Tests[attr].expressions.join(";"));
+	}
+
+	// -----------------------------------------------------------------------
+	//  javascript
+	// -----------------------------------------------------------------------
+
+	window.getComputedStyle = function getComputedStyle(element) {
+		return element.currentStyle;
+	};
+
+	// -----------------------------------------------------------------------
+	//  html/dom
+	// -----------------------------------------------------------------------
+
+	// provide support for the <abbr/> tag for html documents
+	//  this is a proper fix, it preserves the dom structure and
+	//  <abbr/> elements report the correct tagName & scopeName.
+
+	if (!isXML) {
+		ownerDocument.DOTS = "#define x_width 2\n#define x_height 1\nstatic char x_bits[]={0x01}";
+
+		try {
+			ownerDocument.namespaces.add("HTML", "http://www.w3.org/1999/xhtml");
+
+			function replaceAbbr(abbr) {
+				// remove broken tag and replace with HTML:ABBR
+				var outerHTML = abbr.outerHTML.replace(/(ABBR)/, "HTML:$1 class='" + abbr.className + " " + PREFIX + "ABBR' ");
+				var fixAbbr = ownerDocument.createElement(outerHTML);
+				with (abbr) {
+					node = nextSibling;
+					while (node && node.outerHTML != "</ABBR>") {
+						parentNode.removeChild(node);
+						fixAbbr.appendChild(node);
+						node = nextSibling;
+					}
+					// remove the </abbr> closing tag
+					if (node) {
+						parentNode.removeChild(node);
+						fixAbbr.appendChild(node);
+					}
+					parentNode.replaceChild(fixAbbr, abbr);
+				}
+			};
+
+			var abbr = ownerDocument.getElementsByTagName("ABBR");
+			for (var i = 0; i < abbr.length; i++) replaceAbbr(abbr[i]);
+
+		} catch (error) {
+			// explorer confuses me.
+			// we can create a namespace when the <abbr/>
+			//  tag is present, otherwise error!
+			//  this kind of suits me but it's still wierd.
+		}
+	}
+
+	// -----------------------------------------------------------------------
+	//  initialise
+	// -----------------------------------------------------------------------
+
+	// initialise the ie7 class rules
+	ownerDocument.recalc(7);
+
+	// done!
+
+} catch (error) {
+	// release the screen if an error occurs
+	window.document.body.style.display = "block";
+} finally {
+	// have a beer
+}};
+//]]>
+</script>
+</public:component>
+<!-- http://dean.edwards.name/ -->

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2006-04-27T14:31:45.178519Z"
+   url="file:///Users/gregstewart/Documents/subversion/gregs/trunk/plugins"
+   last-author="gregstewart"
+   kind="dir"
+   uuid="c4dbbc63-6a12-0410-8dcf-dd310189df30"
+   repos="file:///Users/gregstewart/Documents/subversion/gregs"
+   revision="1"/>
+<entry
+   committed-rev="1"
+   name="UrlRewriterPlugin.cfc"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="8bc88b2d9509f75a1f7b2384d92341fa"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+<entry
+   committed-rev="1"
+   name="SimplePlugin.cfc"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="61b1dbb3cf81c2fa3f230dee1134a30d"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+<entry
+   committed-rev="1"
+   name="trace.cfc"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="8feab049f671e959200da0905c4e7adc"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+<entry
+   committed-rev="1"
+   name="ApplicationPlugin.cfc"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="ef192bf5d9aa5345aa264b52f2e50ac9"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+</wc-entries>

@@ -1,0 +1,44 @@
+ie7{/*
+	This work is licensed under a Creative Commons License.
+
+	License: http://creativecommons.org/licenses/by/1.0/
+
+	You are free:
+
+	to copy, distribute, display, and perform the work
+	to make derivative works
+	to make commercial use of the work
+
+	Under the following conditions:
+
+	Attribution. You must give the original author credit
+
+	Author:  Dean Edwards/2004
+	Web:     http://dean.edwards.name/
+*/}
+
+/* W3C compliance for Microsoft Internet Explorer */
+
+@namespace html url(http://www.w3.org/1999/xhtml);
+
+
+STYLE {
+	behavior: url(ie7-style.htc);
+}
+
+BODY {
+	behavior: url(ie7.htc);
+	/* initially hide the document to eliminate screen flicker (optional) */
+	display: none;
+}
+
+.ie7_ABBR {
+	/* implement the dotted underline effect */
+	background: url(javascript:document.DOTS) repeat-x bottom left;
+}
+
+/* for compliant browsers */
+
+html>body {
+	display: block;
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2006-04-27T14:31:45.178519Z"
+   url="file:///Users/gregstewart/Documents/subversion/gregs/trunk/views/main"
+   last-author="gregstewart"
+   kind="dir"
+   uuid="c4dbbc63-6a12-0410-8dcf-dd310189df30"
+   repos="file:///Users/gregstewart/Documents/subversion/gregs"
+   revision="1"/>
+<entry
+   committed-rev="4"
+   name="showArticleIndex.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="89f9e575a086c30467a48dd0c54de261"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="4"
+   name="showFeed.cfm.old"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="dbffc58ed7968fde27bb7c7c1fc7331c"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="4"
+   name="showArticle.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="f6d184bb43bab0e394c3c79f2e04a7f1"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="4"
+   name="showFeed.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="cb96f3f8cd95a6e0831595a9d3b59655"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="4"
+   name="showHome.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="7f4c3754978271be6541c46f551064dd"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="4"/>
+</wc-entries>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Niklas Richardson</name>
+		<email>niklas@prismix.com</email>
+		<website>http://www.prismix.com/blog/</website>
+		<link><a href="http://www.prismix.com/blog/" title="go to: http://www.prismix.com/blog/">http://www.prismix.com/blog/</a></link>
+		<yourcomment>Greg,
+
+Here's a graphic version of the code too:
+
+http://www.prismix.com/blog/archives/2005/08/coldfusion_memo.cfm
+
+Cheers
+
+Niklas</yourcomment>
+		<date>{ts '2005-10-21 11:54:55'}</date>
+		<formatteddate>21, October 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

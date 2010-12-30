@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Steven Erat</name>
+		<email>serat@macromedia.com</email>
+		<website>http://www.talkingtree.com/blog/</website>
+		<link><a href="http://www.talkingtree.com/blog/" title="go to: http://www.talkingtree.com/blog/">http://www.talkingtree.com/blog/</a></link>
+		<yourcomment>
+    Greg, Nice post! I was just looking to build this kind of script! I'm working on a 'Running Blackstone on Unix and Linux' presentation. Thanks. -Steve
+  </yourcomment>
+		<date>{ts '2004-12-15 13:49:11'}</date>
+		<formatteddate>15, December 2004</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

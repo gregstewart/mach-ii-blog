@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Hugo Ahlenius</name>
+		<email>gregsblog@oxel.net</email>
+		<website></website>
+		<link><a href="" title="go to: "></a></link>
+		<yourcomment>Regarding the geteventmapping issue -- this seems to be related to a bug in BD (the message, not necessarily what triggered it).
+
+See here:
+http://lists.topica.com/lists/mach-ii-coldfusion/read/message.html?mid=811586255&sort=d&start=3405</yourcomment>
+		<date>{ts '2005-10-19 07:19:11'}</date>
+		<formatteddate>19, October 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

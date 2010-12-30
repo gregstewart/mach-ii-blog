@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>Kola</name>		<email>kolasmail@gmail.com</email>		<website>http://coolskool.blog-city.com/</website>		<link>
+<a href="http://coolskool.blog-city.com/" title="go to: http://coolskool.blog-city.com/">http://coolskool.blog-city.com/</a>
+</link>		<yourcomment>    Damn Wish i'd come across this before I finished my first mach-ii app - ever feel like you've re-invented the wheel  </yourcomment>		<date>{ts '2005-03-24 16:48:35'}</date>		<formatteddate>24, March 2005</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>Greg Stewart</name>
+<email>gregs@tcias.co.uk</email>
+<website>http://gregs.tcias.co.uk/</website>
+<yourcomment>
+    Constantly... :)
+  </yourcomment>
+<date>{ts '2005-03-29 13:15:14'}</date>
+<formatteddate>29, March 2005</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>

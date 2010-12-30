@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>Sameer Kekade</name>		<email>samsoft24@gmail.com</email>		<website>http://www.bluechilli.org</website>		<link>
+<a href="http://www.bluechilli.org" title="go to: http://www.bluechilli.org">http://www.bluechilli.org</a>
+</link>		<yourcomment>    Yeh i just recently found this amazing website cfoop.com only to realise that the domain has expired :( i was much interested in the visio template for components in coldfusion  </yourcomment>		<date>{ts '2005-01-18 22:36:25'}</date>		<formatteddate>18, January 2005</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>Brice Cave</name>
+<email>bcave@rocketmail.com</email>
+<website/>
+<yourcomment>
+    Funny. I was just thinking the same thing as the other guy ;) Cold Fusion DataTypes for Visio. Visio integration for ColdFusion Components would rock, too... I recently started using Coldfusion and it is like going back to the stone age as far as tools are concerned. Eclipse has a good IDE, but I would like to reverse engineer to Visio some cfc's that I have created... -Brice
+  </yourcomment>
+<date>{ts '2005-03-17 17:01:48'}</date>
+<formatteddate>17, March 2005</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>

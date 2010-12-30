@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>Barneyb</name>		<email>bboisvert@gmail.com</email>		<website>http://www.barneyb.com</website>		<link>
+<a href="http://www.barneyb.com" title="go to: http://www.barneyb.com">http://www.barneyb.com</a>
+</link>		<yourcomment>    Surely you meant to use forward slashes not backslashes? I.e. mkdir -p path/to/my/deep/folder  </yourcomment>		<date>{ts '2004-12-14 00:54:21'}</date>		<formatteddate>14, December 2004</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>Greg Stewart</name>
+<email>gregs@tcias.co.uk</email>
+<website>http://gregs.tcias.co.uk/</website>
+<yourcomment>
+    You are right of course. I fixed it, thanks for the heads up!
+  </yourcomment>
+<date>{ts '2004-12-19 23:47:36'}</date>
+<formatteddate>19, December 2004</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>

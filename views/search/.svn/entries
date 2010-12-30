@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2006-04-27T14:31:45.178519Z"
+   url="file:///Users/gregstewart/Documents/subversion/gregs/trunk/views/search"
+   last-author="gregstewart"
+   kind="dir"
+   uuid="c4dbbc63-6a12-0410-8dcf-dd310189df30"
+   repos="file:///Users/gregstewart/Documents/subversion/gregs"
+   revision="1"/>
+<entry
+   committed-rev="4"
+   name="showResults.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="31c13b2f9d11b490ef358fec468876af"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:35.000000Z"
+   revision="4"/>
+</wc-entries>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2006-04-27T14:31:45.178519Z"
+   url="file:///Users/gregstewart/Documents/subversion/gregs/trunk/views/_scripts"
+   last-author="gregstewart"
+   kind="dir"
+   uuid="c4dbbc63-6a12-0410-8dcf-dd310189df30"
+   repos="file:///Users/gregstewart/Documents/subversion/gregs"
+   revision="1"/>
+<entry
+   committed-rev="1"
+   name="_email.js"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="95ec6c7b2ea07b37355b66078f8a8bb3"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="_validation.js"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="9c144ec94045938f3ef9885158085257"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="_date.js"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="a9312aefdd9807589b7a5cadfee1d70f"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="_font_size.js"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="aa873b1a258d67ad011bf1844b14f906"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="_slideshow.js"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="547b3059631fc63cec8f11352eb9952a"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+</wc-entries>

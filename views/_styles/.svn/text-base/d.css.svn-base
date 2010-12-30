@@ -1,0 +1,21 @@
+/*
+	All of the presentation aspects of this site would not 
+	have been possible without the work of Doug Bowman
+	(www.stopdesign.com) for Adaptive Path.
+	
+	The stylesheets control all aspects of layout and this is 
+	down a technique devised by Doug. I have simply turned
+	the process into a dynamic one by building a PHP classes and 
+	a ColdFusion Component to control the page layout. 
+	
+	Thank you to Doug for the innovation!! 
+*/
+
+/* has an issue with Safari
+@import url(ie7-xml.css);
+my|tag {
+    font-family: monospace;
+}*/
+@import url(structure.css);
+@import url(style2.css);
+@import url(tags.css);

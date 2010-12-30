@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2006-04-27T14:31:45.178519Z"
+   url="file:///Users/gregstewart/Documents/subversion/gregs/trunk/views/cms"
+   last-author="gregstewart"
+   kind="dir"
+   uuid="c4dbbc63-6a12-0410-8dcf-dd310189df30"
+   repos="file:///Users/gregstewart/Documents/subversion/gregs"
+   revision="1"/>
+<entry
+   committed-rev="1"
+   name="editCategorySuccess.cfm"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="1ec2443d44ca25f7af04c73d66f25cca"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="editSuccess.cfm"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="dbba3d3e62b7497260ec719b6e3cf6a9"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="addCategorySuccess.cfm"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="9a5bbed31cb688ad50a0e14583408cbe"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="4"
+   name="selectEditContent.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="bacadeefddf7af8d578f640a0e03aebc"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="4"
+   name="mainTemplate.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="191966913f402fe6981586656629db3e"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="4"
+   name="editContent.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="4b98bc779a1df3a180fecf4a53bb50af"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="1"
+   name="addSuccess.cfm"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="fb99a584f56fef4b2472df21c92f1578"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="showPreview.cfm"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="f15f2068c759da6ddaa4438649f3d011"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="4"
+   name="selectEditCategory.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="7d5d2410989d73a6c455cea2cabac6d2"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="4"
+   name="editCategory.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="593a625f8147a562fce3e7a236e8ccf7"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="1"
+   name="previewMode.cfm"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="6605140bb2a6ca576a06ebafac07ec91"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="3"
+   name="cmsNav.cfm"
+   text-time="2006-07-03T12:32:38.000000Z"
+   committed-date="2006-07-03T13:07:50.726402Z"
+   checksum="09e155fef37e39eeaac730167789d4e6"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="3"/>
+<entry
+   committed-rev="4"
+   name="showHome.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="6532ae6bb00ab8cff8f336b73714d9e3"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="1"
+   name="deleteCategorySuccess.cfm"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="c15dddc055668974d4d8bf2dfefea4d3"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="4"
+   name="noEditPermission.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="3cbdb05f58e282dbb4311840a4846336"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="1"
+   name="deleteSuccess.cfm"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="3aa78b2ed430718c95d0e74e3f29f35a"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="categoryListingNotSpecified.cfm"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="2caf410c1b3a893249d9843905dbf80a"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+</wc-entries>

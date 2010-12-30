@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Ethan Cane</name>
+		<email>ethan@xmlstandards.org</email>
+		<website>http://www.xmlstandards.org/</website>
+		<link><a href="http://www.xmlstandards.org/" title="go to: http://www.xmlstandards.org/">http://www.xmlstandards.org/</a></link>
+		<yourcomment>Sure dude... Just read the official W3C specification for XSLT. All of these functions are there, albeit verbosely documented.
+
+Keep digging deeper.</yourcomment>
+		<date>{ts '2005-08-27 22:18:16'}</date>
+		<formatteddate>27, August 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

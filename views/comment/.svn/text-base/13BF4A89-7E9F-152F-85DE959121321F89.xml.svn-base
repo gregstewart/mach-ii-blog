@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>Alastair</name>		<email>alastair@girtby.net</email>		<website>http://girtby.net</website>		<link>
+<a href="http://girtby.net" title="go to: http://girtby.net">http://girtby.net</a>
+</link>		<yourcomment>Don't forget ctrl-r. It does an incremental reverse search through your history. Hard to explain, easy to use. For example, to find the most recent usage of make in your history, just type ctrl-r m-a-k-e.Easy, and invaluable!I'm seriously considering the effort of learning Z shell, as it is loaded with shortcuts like this.</yourcomment>		<date>{ts '2005-06-30 22:13:35'}</date>		<formatteddate>30, June 2005</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>Greg Stewart</name>
+<email>gregs@tcias.co.uk</email>
+<website>http://gregs.tcias.co.uk/</website>
+<yourcomment>Thanks for that Al! Much appreciated!</yourcomment>
+<date>{ts '2005-07-01 12:59:08'}</date>
+<formatteddate>01, July 2005</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Alexander McCabe</name>
+		<email>alex@centralquestion.com</email>
+		<website>http://www.centralquestion.com/flauntit/</website>
+		<link><a href="http://www.centralquestion.com/flauntit/" title="go to: http://www.centralquestion.com/flauntit/">http://www.centralquestion.com/flauntit/</a></link>
+		<yourcomment>Hi Greg,
+
+You might find that it gets a little complicated to pass in multiple flashvars, especially if they have characters that need to be escaped or foreign characters - this little javascript library is helpful for that.
+http://www.centralquestion.com/archives/2005/03/writeflash_flas.html</yourcomment>
+		<date>{ts '2005-08-26 18:06:06'}</date>
+		<formatteddate>26, August 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

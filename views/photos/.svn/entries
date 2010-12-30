@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2006-04-27T14:31:45.178519Z"
+   url="file:///Users/gregstewart/Documents/subversion/gregs/trunk/views/photos"
+   last-author="gregstewart"
+   kind="dir"
+   uuid="c4dbbc63-6a12-0410-8dcf-dd310189df30"
+   repos="file:///Users/gregstewart/Documents/subversion/gregs"
+   revision="1"/>
+<entry
+   name="stephen_hayes"
+   kind="dir"/>
+<entry
+   name="vienna"
+   kind="dir"/>
+<entry
+   name="wedding"
+   kind="dir"/>
+<entry
+   committed-rev="4"
+   name="showPhotos.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="13a86a22b146f8a432e7728f520fe91a"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:38.000000Z"
+   revision="4"/>
+<entry
+   name="barcelona"
+   kind="dir"/>
+<entry
+   name="matt_wedding"
+   kind="dir"/>
+<entry
+   name="egypt"
+   kind="dir"/>
+<entry
+   name="san_sebastian"
+   kind="dir"/>
+<entry
+   name="big_chill"
+   kind="dir"/>
+</wc-entries>

@@ -1,0 +1,98 @@
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;	
+	background: #0f8994 url(../i/bg_dropShadow1.2.png) top center repeat-y;
+	font-size : .75em;
+	font-family: Verdana;
+	text-align: center;
+}
+
+h1, h2, h3, h4 {
+	margin-top: 5px;
+	margin-bottom : 5px;
+}
+
+h1 {
+	font-size : 16px;
+	font-style : italic;
+	font-weight : bold;
+}
+
+h2 {
+	font-size : 14px;
+	font-weight : bold;
+}
+
+h3 {
+	display:none;
+}
+
+h4 {
+	margin-top: 2px;
+	/*margin-left:-50px;*/
+}
+
+hr {
+	height: 1px;
+}
+
+p {
+}
+
+a {
+	font-weight : bold;
+	color : #074348;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #0f8994;
+	text-decoration : underline;
+}
+
+ul {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+form {
+	margin : 0;
+	padding : 0;
+}
+
+legend {
+	display : none;
+	border : none;
+}
+
+fieldset {
+	margin : 0;
+	border : none;
+}
+
+input {
+	font-size:12px;
+	border : solid 1px;
+}
+
+textarea {
+	border: 1px solid #000;
+}
+
+submit {
+	padding-left:5px;
+	background-color : #fff;
+	font-weight : bolder;
+	border : solid 1px;		
+}
+
+img {
+	border : 0;
+}

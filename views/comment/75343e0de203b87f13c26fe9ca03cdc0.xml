@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>Leif</name>		<email>leif.wells@gmail.com</email>		<website/>		<link>
+<a href="" title="go to: "/>
+</link>		<yourcomment>    OK. It looks like you've fallen for the old Remoting 2.0 Trap. With version 1.0, the files were actually in the folder path of Flash MX. With version 2.0 they packaged the files inside components. The files are there, but not the way you think they should be. With Remoting 2.0 you need to open your Window &gt; Other Panels &gt; Common Libraries &gt; Remoting panel and drag those to your stage. And if you need to get the actual files, you can get them from the Macromedia site as well.  </yourcomment>		<date>{ts '2005-03-01 15:15:14'}</date>		<formatteddate>01, March 2005</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>Greg Stewart</name>
+<email>gregs@tcias.co.uk</email>
+<website>http://gregs.tcias.co.uk/</website>
+<yourcomment>
+    &lt;p&gt;Thanks for your comment leif, but maybe you clarify something for me.&lt;/p&gt;
+
+    &lt;p&gt;So what you are saying is that in version 2 you need to drag the components onto your stage and then compile the movie? What strikes me as odd is that I thought I'd been running the same version of MX pro for the best part of a year. So somewhere in between did MM update MX pro to be that different (I remember there being an updater)? Also having now copied over the what are essentially version 1 components, how will this affect my development environment? I guess this mean that if I don't drag the components onto the stage version 1 components will be used.&lt;/p&gt;
+
+    &lt;p&gt;Not to rant on about this, but MM are a strange ship. With CFMX change is introduced with every effort for backward compatibility, but it seems that with the Flash range of products it's the complete opposite. Then again I am something of a beginner with Flash so maybe I just not aware/don't know where to look for that kind of information.&lt;/p&gt;
+
+    &lt;p&gt;Thanks for the comment, I'll update the post asap.&lt;/p&gt;
+
+    &lt;p&gt;Cheers&lt;br /&gt;
+    Greg&lt;/p&gt;
+  </yourcomment>
+<date>{ts '2005-03-02 11:08:25'}</date>
+<formatteddate>02, March 2005</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>

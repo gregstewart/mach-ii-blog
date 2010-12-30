@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>igor</name>
+		<email>igormeden@gmail.com</email>
+		<website>www.croatiaholidayapartments.com</website>
+		<link><a href="www.croatiaholidayapartments.com" title="go to: www.croatiaholidayapartments.com">www.croatiaholidayapartments.com</a></link>
+		<yourcomment>Great! Thanks a lot!</yourcomment>
+		<date>{ts '2005-08-10 21:09:39'}</date>
+		<formatteddate>10, August 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

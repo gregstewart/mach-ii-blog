@@ -1,0 +1,599 @@
+<mach-ii version="1.0">
+
+	<!-- PROPERTIES -->
+	<properties>
+		<property name="applicationRoot" value="/" />
+        <property name="commentPath" value="/views/comment/" />
+        <property name="photoPath" value="/views/photos/" />
+		<property name="defaultEvent" value="main.showHome" />
+		<property name="eventParameter" value="event" />
+		<property name="parameterPrecedence" value="form" />
+		<property name="maxEvents" value="10" />
+		<property name="exceptionEvent" value="exceptionEvent" />
+		<!-- Application variables -->
+	    <property name="dsn" value="wild_tciasdb" />
+	    <!-- DSN name -->
+	    <property name="dbType" value="MYSQL" />
+	    <property name="dbType2" value="XML" />
+	    <!-- database types -->
+	    <property name="siteID" value="029c68947d7e7f4aef66b04f7544c3b5" />
+	    <!-- site id -->
+	    <property name="colSequence" value="MX" />
+	    <!-- default column layout -->
+	    <!-- // default page widths -->
+	    <property name="cssContent" value="765" />
+	    <!-- adjust the full width of the body area -->
+	    <property name="cssMaincol" value="552" />
+	    <!-- adjusts the width of the main content area -->
+	    <property name="cssSubCol" value="120" />
+	    <!-- adjusts the width of the left content area -->
+	    <property name="cssXcol" value="180" />
+	    <!--  adjusts the width of the right content area -->
+	    <!-- // overriding widths -->
+	    <property name="cssWrap" value="552" />
+	  	<!-- for column layout: MSX/SMX set the wrap width (this includes left and main content) -->
+
+		<!-- // BEWARE: make sure that the combined width of subcol and maincol is not greater than wrap. if you do this will force sub under main -->
+	    <property name="cssCol1" value="552" />
+	    <!-- for column layout: MSX/SMX set the maincol width -->
+	    <property name="cssCol2" value="120" />
+	    <!-- for column layout: MSX/SMX set the subcol width -->
+	    <!-- // page specific default values -->
+	    <property name="skipNav" value="0" />
+	    <!-- en/disable skip nav. Default disabled -->
+	    <property name="styleSheet" value="d.css" />
+		<!-- for specific style sheets, override here or in your events -->
+	    <property name="javaScripts" value="/views/_scripts/_font_size.js" />
+	  	<!-- specify a comma delimited list of scripts, e.g. /path/scriptName.js -->
+	    <property name="onLoad" value="" />
+	    <!-- use this param to sepcify any items that need to be passed to body tag -->
+	    <property name="description" value="" />
+	    <!-- use this for storing and displaying the sites meta-description -->
+	    <property name="keywords" value="" />
+	  	<!-- use this for stroing and displaying the sites meta-keywords -->
+	    <property name="httpHost" value="http://gregs.tcias.co.uk/" /> 
+	    <!-- the cgi variable for base href -->
+	    <property name="pageTitle" value="gregs.teacupinastorm.com" />
+	    <!-- default page title -->
+	</properties>
+
+	<!-- LISTENERS -->
+	<listeners>
+		<listener name="applicationListener" type="uk.co.tcias.gregs.model.applicationListener">
+		    <invoker type="MachII.framework.invokers.CFCInvoker_Event" />
+		</listener>
+        <listener name="categoryListener" type="uk.co.tcias.gregs.model.category.categoryListener">
+			<invoker type="MachII.framework.invokers.CFCInvoker_Event" />				
+		</listener>
+		<listener name="commentListener" type="uk.co.tcias.gregs.model.comment.commentListener">
+			<invoker type="MachII.framework.invokers.CFCInvoker_Event" />				
+		</listener>
+        <listener name="contentListener" type="uk.co.tcias.gregs.model.main.contentListener">
+		    <invoker type="MachII.framework.invokers.CFCInvoker_Event" />
+		</listener>
+        <listener name="photoListener" type="uk.co.tcias.gregs.model.photos.photoListener">
+			<invoker type="MachII.framework.invokers.CFCInvoker_Event" />				
+		</listener>
+		<listener name="searchListener" type="uk.co.tcias.gregs.model.search.searchListener">
+		    <invoker type="MachII.framework.invokers.CFCInvoker_Event" />
+		</listener>
+		<listener name="resourceListener" type="uk.co.tcias.gregs.model.resource.resourceListener">
+			<invoker type="MachII.framework.invokers.CFCInvoker_Event" />				
+		</listener>
+		<listener name="loginListener" type="uk.co.tcias.gregs.model.login.loginListener">
+			<invoker type="MachII.framework.invokers.CFCInvoker_Event" />				
+		</listener>
+		
+	</listeners>
+	
+	<!-- EVENT-FILTERS -->
+	<event-filters>
+		<!--
+		<event-filter name="yourEventFilterName" type="fullyQualifiedDotDelimitedPathToCFC">
+			<parameters>
+				<parameter name="yourParameterName" value="yourParameterValue" />
+			</parameters>
+		</event-filter>
+		-->
+		<event-filter name="ApplicationFilter" type="uk.co.tcias.gregs.filters.ApplicationFilter">
+			<parameters>
+				<parameter name="invalidEvent" value="main.showHome" />
+			</parameters>
+		</event-filter>
+		
+        <event-filter name="UrlFilter" type="uk.co.tcias.gregs.filters.UrlFilter">
+			<parameters>
+				<parameter name="invalidEvent" value="main.showHome" />
+			</parameters>
+		</event-filter>
+		
+		<event-filter name="securityFilter" type="uk.co.tcias.gregs.filters.Security">
+			<parameters>
+				<parameter name="invalidEvent" value="notLoggedIn" />
+			</parameters>
+		</event-filter>
+		
+		<event-filter name="validateFormObject" type="uk.co.tcias.gregs.filters.ValidateFormObject" />
+		
+		<event-filter name="beanChecker" type="uk.co.tcias.gregs.filters.BeanChecker" />
+		
+		<event-filter name="checkAuthorFilter" type="uk.co.tcias.gregs.filters.CheckAuthor" />
+		
+		<event-filter name="categoryDropDownFilter" type="uk.co.tcias.gregs.filters.CategoryDropDownFilter" />
+	</event-filters>
+
+	<!-- EVENT-HANDLERS -->
+	<event-handlers>
+		<!-- COMMENTS SECTION -->
+		 <event-handler event="comment.doPostComment" access="public">
+			<!-- any legal elements -->
+			<event-bean name="comment" type="uk.co.tcias.gregs.model.comment.comment" />
+			<notify listener="applicationListener" method="getAllPageProperties" resultKey="request.pageProperties" />
+			<notify listener="applicationListener" method="sendNewCommentNotification" />
+			<notify listener="commentListener" method="setComment" resultKey="request.pageContent.comments" />
+      	</event-handler>
+		
+        <event-handler event="comment.commentPosted" access="public">
+			<!-- any legal elements -->
+			<notify listener="applicationListener" method="getAllPageProperties" resultKey="request.pageProperties" />
+			<view-page name="comment.commentPosted" contentKey="request.pageContent.mainBody" />
+      		<announce event="layoutPopUpPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="comment.postComment" access="public">
+			<!-- any legal elements -->
+			<notify listener="applicationListener" method="getAllPageProperties" resultKey="request.pageProperties" />
+			<notify listener="commentListener" method="getComments" resultKey="request.pageContent.comments" />
+      		<view-page name="comment.postComment" contentKey="request.pageContent.mainBody" />
+      		<announce event="layoutPopUpPage" copyEventArgs="true" />
+		</event-handler>
+
+		<!-- ARTICLE SECTION -->
+       	<event-handler event="main.showArticle" access="public">
+			<!-- any legal elements -->
+			<notify listener="applicationListener" method="getAllPageProperties" resultKey="request.pageProperties" />
+     		<notify listener="categoryListener" method="getNav" resultKey="request.pageContent.qry_categories" />
+			<notify listener="contentListener" method="getContentByTitle" resultKey="request.pageContent.results" />
+      		<notify listener="resourceListener" method="getFriends" resultKey="request.pageContent.friends" />
+			<notify listener="resourceListener" method="getFavourites" resultKey="request.pageContent.favourites" />
+      		<view-page name="main.showArticle" contentKey="request.pageContent.mainBody" />
+      		<announce event="layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="main.showArticleIndex" access="public">
+			<!-- any legal elements -->
+			<notify listener="categoryListener" method="getByTitle" resultKey="request.categoryObject" />
+			<event-arg name="categoryObject" variable="request.categoryObject" />
+			<filter name="ApplicationFilter" />
+			<announce event="main.checkRelatedCategories" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="main.showFeed" access="public">
+			<!-- any legal elements -->
+			<notify listener="applicationListener" method="getAllPageProperties" resultKey="request.pageProperties" />
+			<notify listener="contentListener" method="getAll" resultKey="request.pageContent.results" />
+      		<view-page name="main.showFeed" />
+		</event-handler>
+		
+		<event-handler event="main.showHome" access="public">
+			<!-- any legal elements -->
+			<notify listener="applicationListener" method="getAllPageProperties" resultKey="request.pageProperties" />
+      		<notify listener="categoryListener" method="getNav" resultKey="request.pageContent.qry_categories" />
+			<notify listener="contentListener" method="getAll" resultKey="request.pageContent.results" />
+			<notify listener="resourceListener" method="getFriends" resultKey="request.pageContent.friends" />
+			<notify listener="resourceListener" method="getFavourites" resultKey="request.pageContent.favourites" />
+      		<view-page name="main.showHome" contentKey="request.pageContent.mainBody" />
+      		<announce event="layoutPage" copyEventArgs="true" />
+		</event-handler>
+
+		<!-- PHOTOS SECTION -->
+        <event-handler event="photos.showGallery" access="public">
+			<!-- any legal elements -->
+			<filter name="UrlFilter" />
+            <notify listener="applicationListener" method="getAllPageProperties" resultKey="request.pageProperties" />
+     		<notify listener="categoryListener" method="getNav" resultKey="request.pageContent.qry_categories" />
+			<notify listener="contentListener" method="getContentByTitle" resultKey="request.pageContent.results" />
+            <notify listener="photoListener" method="getPhotosByTitle" resultKey="request.pageContent.photos" />
+      		<notify listener="resourceListener" method="getFriends" resultKey="request.pageContent.friends" />
+			<notify listener="resourceListener" method="getFavourites" resultKey="request.pageContent.favourites" />
+      		<view-page name="photos.showPhotos" contentKey="request.pageContent.mainBody" />
+      		<announce event="layoutPage" copyEventArgs="true" />
+		</event-handler>
+
+		<!-- SEARCH SECTION -->
+		<event-handler event="search.doSearch" access="public">
+			<!-- any legal elements -->
+			<notify listener="applicationListener" method="getAllPageProperties" resultKey="request.pageProperties" />
+		    <notify listener="categoryListener" method="getNav" resultKey="request.pageContent.qry_categories" />
+			<notify listener="searchListener" method="getResults" resultKey="request.pageContent.results" />
+			<notify listener="searchListener" method="getResultTotal" resultKey="request.pageContent.resultsTotal" />
+			<notify listener="resourceListener" method="getFriends" resultKey="request.pageContent.friends" />
+			<notify listener="resourceListener" method="getFavourites" resultKey="request.pageContent.favourites" />
+			<view-page name="search.showResults" contentKey="request.pageContent.mainBody" />
+			<announce event="layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="main.checkRelatedCategories" access="private">
+			<!-- any legal elements -->
+			<notify listener="categoryListener" method="getCheckRelated" resultKey="request.categoryIds" />
+			<event-arg name="categoryIDs" variable="request.categoryIds" />
+			<announce event="main.showListing" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="main.showListing" access="private">
+			<!-- any legal elements -->
+			<notify listener="applicationListener" method="getAllPageProperties" resultKey="request.pageProperties" />
+      		<notify listener="categoryListener" method="getNav" resultKey="request.pageContent.qry_categories" />
+			<notify listener="contentListener" method="getAllByCat" resultKey="request.pageContent.results" />			
+			<notify listener="resourceListener" method="getFriends" resultKey="request.pageContent.friends" />
+			<notify listener="resourceListener" method="getFavourites" resultKey="request.pageContent.favourites" />
+		    <view-page name="main.showArticleIndex" contentKey="request.pageContent.mainBody" />
+			<announce event="layoutPage" copyEventArgs="true" />
+		</event-handler>
+
+		<event-handler event="exceptionEvent" access="private">
+			<view-page name="exception" />
+		</event-handler>
+		
+		<!-- LOGIN SECTION -->
+		<event-handler event="doLogin" access="public">
+			<event-bean name="loginBean" type="uk.co.tcias.gregs.model.login.login" fields="username,password" />
+			<filter name="validateFormObject">
+				<parameter name="formObjectName" value="loginBean" />
+				<parameter name="invalidEvent" value="formHasInvalidValues" />
+				<parameter name="clearEventQueue" value="true" />
+			</filter>
+			<notify listener="LoginListener" method="attemptLogin" />
+		</event-handler>
+		
+		<event-handler event="loginSuccess" access="public">
+			<view-page name="loginWelcome" contentKey="request.pageContent.exception" />
+			<announce event="cms.showHome" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="loginFailure" access="public">
+			<view-page name="loginFailure" contentKey="request.pageContent.exception" />
+			<announce event="main.showHome" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="doLogout" access="public">
+			<notify listener="LoginListener" method="doLogout" />
+		</event-handler>
+		
+		<event-handler event="logoutSuccess" access="public">
+			<view-page name="logoutSuccess" contentKey="request.pageContent.exception" />
+			<announce event="main.showHome" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="notLoggedIn" access="public">
+			<view-page name="pleaseLogin" contentKey="request.pageContent.exception" />
+			<announce event="main.showHome" copyEventArgs="true" />
+		</event-handler>
+		
+		<!-- CMS CONTENT SECTION -->
+		<event-handler event="cms.showHome" access="public">
+			<filter name="securityFilter" /> 
+			<notify listener="applicationListener" method="getAllPageProperties" resultKey="request.pageProperties" />
+      		<notify listener="categoryListener" method="getNav" resultKey="request.pageContent.qry_categories" />
+			<notify listener="contentListener" method="getAll" resultKey="request.pageContent.results" />
+			<notify listener="resourceListener" method="getFriends" resultKey="request.pageContent.friends" />
+			<notify listener="resourceListener" method="getFavourites" resultKey="request.pageContent.favourites" />
+      		<view-page name="cms.showHome" contentKey="request.pageContent.mainBody" />
+      		<announce event="cms.layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.showPreview" access="public">
+			<!-- TODO: Filter the form arguments into the event, by way of using the content beaner-->
+			<event-bean name="content" type="uk.co.tcias.gregs.model.main.content" fields="contentID,title,articleContent,name,categoryID,teaser,contentMetaData" /> 
+			<!-- TODO: Then simply mimmic the show page event handler-->
+			<notify listener="applicationListener" method="getAllPageProperties" resultKey="request.pageProperties" />
+      		<notify listener="categoryListener" method="getNav" resultKey="request.pageContent.qry_categories" />
+			<notify listener="resourceListener" method="getFriends" resultKey="request.pageContent.friends" />
+			<notify listener="resourceListener" method="getFavourites" resultKey="request.pageContent.favourites" />
+      		<view-page name="cms.showPreview" contentKey="request.pageContent.mainBody" />
+			<view-page name="cms.previewMode" contentKey="request.pageContent.exception" />
+			<announce event="cms.layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.content.add" access="public">
+			<filter name="securityFilter" />
+			<event-bean name="content" type="uk.co.tcias.gregs.model.main.content" /> 
+			<filter name="checkAuthorFilter">
+				<parameter name="contentObject" value="content" />
+				<parameter name="invalidEvent" value="cms.noEditPermissions" />
+				<parameter name="clearEventQueue" value="true" />
+			</filter>
+			<notify listener="categoryListener" method="getAll" resultKey="request.pageContent.categories" />
+			<filter name="categoryDropDownFilter">
+				<parameter name="categoryQuery" value="request.pageContent.categories" />
+			</filter>
+			<event-arg name="submitEvent" value="cms.content.doAdd" />
+			<event-arg name="submitButtonLabel" value="Add" />
+			<view-page name="cms.editContent" contentKey="request.pageContent.mainBody" />
+			<announce event="cms.layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.content.edit" access="public">
+			<filter name="securityFilter" /> 
+			<notify listener="contentListener" method="getContentById" resultKey="request.pageContent.content" />
+			<filter name="checkAuthorFilter">
+				<parameter name="contentObject" value="content" />
+				<parameter name="invalidEvent" value="cms.noEditPermissions" />
+				<parameter name="clearEventQueue" value="true" />
+			</filter>
+			<notify listener="categoryListener" method="getAll" resultKey="request.pageContent.categories" />
+			<filter name="categoryDropDownFilter">
+				<parameter name="categoryQuery" value="request.pageContent.categories" />
+			</filter>
+			<event-arg name="submitEvent" value="cms.content.doUpdate" />
+			<event-arg name="submitButtonLabel" value="Update" />
+			<view-page name="cms.editContent" contentKey="request.pageContent.mainBody" />
+			<announce event="cms.layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.content.delete" access="public">
+			<filter name="securityFilter" /> 
+			<notify listener="contentListener" method="getContentById" resultKey="request.pageContent.content" />
+			<notify listener="categoryListener" method="getAll" resultKey="request.pageContent.categories" />
+			<event-arg name="submitEvent" value="cms.content.doDelete" />
+			<event-arg name="submitButtonLabel" value="Delete" />
+			<view-page name="cms.editContent" contentKey="request.pageContent.mainBody" />
+			<announce event="cms.layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.content.selectDelete" access="public">
+			<filter name="securityFilter" /> 
+			<notify listener="contentListener" method="getAllCMSTitles" resultKey="request.pageContent.content" />
+			<event-arg name="submitEvent" value="cms.content.delete" />
+			<event-arg name="submitButtonLabel" value="Select" />
+			<view-page name="cms.selectEditContent" contentKey="request.pageContent.mainBody" />
+			<announce event="cms.layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.content.selectEdit" access="public">
+			<filter name="securityFilter" /> 
+			<notify listener="contentListener" method="getAllTitles" resultKey="request.pageContent.content" />
+			<event-arg name="submitEvent" value="cms.content.edit" />
+			<event-arg name="submitButtonLabel" value="Select" />
+			<view-page name="cms.selectEditContent" contentKey="request.pageContent.mainBody" />
+			<announce event="cms.layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.content.editFromBean" access="public">
+			<!-- The user is returned here if the form contained any submission errors -->
+			<filter name="securityFilter" /> 
+			<notify listener="categoryListener" method="getAll" resultKey="request.pageContent.categories" />
+			<view-page name="cms.editContent" contentKey="request.pageContent.mainBody" />
+			<announce event="cms.layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.content.doAction" access="public">
+			<event-bean name="contentBean" type="uk.co.tcias.gregs.model.main.content" fields="contentID,title,articleContent,name,categoryID,teaser,publicationDate,expiryDate,dateAdded,contentMetaData,isPublished, Author, contentType" />
+			<filter name="validateFormObject">
+				<parameter name="formObjectName" value="contentBean" />
+				<parameter name="invalidEvent" value="cms.formHasInvalidValues" />
+				<parameter name="clearEventQueue" value="true" />
+			</filter>
+			<notify listener="contentListener" method="chooseAction" />
+		</event-handler>
+		
+		<event-handler event="cms.content.doAdd" access="public">
+			<event-bean name="contentBean" type="uk.co.tcias.gregs.model.main.content" fields="contentID,title,articleContent,name,categoryID,teaser,publicationDate,expiryDate,dateAdded,contentMetaData,isPublished, Author, contentType" />
+			<filter name="validateFormObject">
+				<parameter name="formObjectName" value="contentBean" />
+				<parameter name="invalidEvent" value="cms.formHasInvalidValues" />
+				<parameter name="clearEventQueue" value="true" />
+			</filter>
+			<notify listener="contentListener" method="setContent" />
+		</event-handler>
+		
+		<event-handler event="cms.content.doDelete" access="public">
+			<notify listener="contentListener" method="removeContentByID" />
+		</event-handler>
+		
+		<event-handler event="cms.content.doUpdate" access="public">
+			<event-bean name="contentBean" type="uk.co.tcias.gregs.model.main.content" fields="contentID,title,articleContent,name,categoryID,teaser,publicationDate,expiryDate,dateAdded,contentMetaData,isPublished, Author, contentType" />
+			<filter name="validateFormObject">
+				<parameter name="formObjectName" value="contentBean" />
+				<parameter name="invalidEvent" value="cms.formHasInvalidValues" />
+				<parameter name="clearEventQueue" value="true" />
+			</filter>
+			<notify listener="contentListener" method="setContentByID" />
+		</event-handler>
+		
+		<event-handler event="cms.content.addSuccess" access="private">
+			<view-page name="cms.addSuccess" contentKey="request.pageContent.exception" />
+			<announce event="cms.showHome" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.content.deleteSuccess" access="private">
+			<view-page name="cms.deleteSuccess" contentKey="request.pageContent.exception" />
+			<announce event="cms.showHome" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.content.updateSuccess" access="private">
+			<view-page name="cms.editSuccess" contentKey="request.pageContent.exception" />
+			<announce event="cms.showHome" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.noEditPermissions" access="private">
+			<view-page name="cms.noEditPermission" contentKey="request.pageContent.exception" />
+			<announce event="cms.showHome" copyEventArgs="true" />
+		</event-handler>
+		
+		<!-- CATEGORY SECTION -->
+		<event-handler event="cms.category.selectDelete" access="public">
+			<filter name="securityFilter" /> 
+			<notify listener="categoryListener" method="getCategoryByID" resultKey="request.pageContent.category" />
+			<event-arg name="submitEvent" value="cms.category.delete" />
+			<event-arg name="submitButtonLabel" value="Select" />
+			<view-page name="cms.selectEditCategory" contentKey="request.pageContent.mainBody" />
+			<announce event="cms.layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.category.selectEdit" access="public">
+			<filter name="securityFilter" /> 
+			<notify listener="categoryListener" method="getAll" resultKey="request.pageContent.category" />
+			<filter name="categoryDropDownFilter">
+				<parameter name="categoryQuery" value="request.pageContent.categories" />
+			</filter>
+			<event-arg name="submitEvent" value="cms.category.edit" />
+			<event-arg name="submitButtonLabel" value="Select" />
+			<view-page name="cms.selectEditCategory" contentKey="request.pageContent.mainBody" />
+			<announce event="cms.layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.category.add" access="public">
+			<filter name="securityFilter" />
+			<event-bean name="category" type="uk.co.tcias.gregs.model.category.category" /> 
+			<event-arg name="submitEvent" value="cms.category.doAdd" />
+			<event-arg name="submitButtonLabel" value="Add" />
+			<view-page name="cms.editCategory" contentKey="request.pageContent.mainBody" />
+			<announce event="cms.layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.category.edit" access="public">
+			<filter name="securityFilter" /> 
+			<notify listener="categoryListener" method="getCategoryById" resultKey="request.pageContent.category" />
+			<event-arg name="submitEvent" value="cms.category.doUpdate" />
+			<event-arg name="submitButtonLabel" value="Update" />
+			<view-page name="cms.editCategory" contentKey="request.pageContent.mainBody" />
+			<announce event="cms.layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.category.delete" access="public">
+			<filter name="securityFilter" /> 
+			<notify listener="categoryListener" method="getCategoryById" resultKey="request.pageContent.category" />
+			<event-arg name="submitEvent" value="cms.category.doDelete" />
+			<event-arg name="submitButtonLabel" value="Delete" />
+			<view-page name="cms.editCategory" contentKey="request.pageContent.mainBody" />
+			<announce event="cms.layoutPage" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.category.doAdd" access="public">
+			<notify listener="categoryListener" method="setCategory" />
+		</event-handler>
+		
+		<event-handler event="cms.category.doDelete" access="public">
+			<notify listener="categoryListener" method="removeCategoryByID" />
+		</event-handler>
+		
+		<event-handler event="cms.category.doUpdate" access="public">
+			<notify listener="categoryListener" method="setCategoryByID" />
+		</event-handler>
+		
+		<event-handler event="cms.category.addSuccess" access="private">
+			<view-page name="cms.addCategorySuccess" contentKey="request.pageContent.exception" />
+			<announce event="main.cms.showHome" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.category.deleteSuccess" access="private">
+			<view-page name="cms.deleteCategorySuccess" contentKey="request.pageContent.exception" />
+			<announce event="main.cms.showHome" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="cms.category.updateSuccess" access="private">
+			<view-page name="cms.editCategorySuccess" contentKey="request.pageContent.exception" />
+			<announce event="main.cms.showHome" copyEventArgs="true" />
+		</event-handler>
+		
+		<!-- FORM VALIDATION SECTION -->
+		<event-handler event="cms.formHasInvalidValues" access="private">
+			<!-- <filter name="beanChecker">
+				<parameter name="beanToCheck" value="contentBean" />
+				<parameter name="beanToOverwrite" value="content" />
+			</filter> -->
+			<view-page name="showFormErrors" contentKey="request.pageContent.exception" />
+			<announce event="cms.content.editFromBean" copyEventArgs="true" />
+		</event-handler>
+		
+		<event-handler event="formHasInvalidValues" access="private">
+			<view-page name="showFormErrors" contentKey="request.pageContent.exception" />
+			<announce event="main.showHome" copyEventArgs="true" />
+		</event-handler>
+		
+		<!-- PAGE LAYOUT SECTION -->
+		<event-handler event="cms.layoutPage" access="private">
+      		<notify listener="applicationListener" method="getAllPageProperties" resultKey="request.pageProperties" />
+			<notify listener="categoryListener" method="getNav" resultKey="request.pageContent.qry_categories" />
+			<notify listener="resourceListener" method="getFriends" resultKey="request.pageContent.friends" />
+			<notify listener="resourceListener" method="getFavourites" resultKey="request.pageContent.favourites" />
+			<view-page name="header" contentKey="request.pageContent.header" />
+	      	<view-page name="footer" contentKey="request.pageContent.footer" />
+	      	<view-page name="xCol" contentKey="request.pageContent.xCol" />
+	      	<view-page name="subCol" contentKey="request.pageContent.subCol" />
+			<view-page name="cms.cmsNav" contentKey="request.pageContent.cmsNav" />
+	      	<view-page name="cms.mainTemplate" />
+	    </event-handler>
+		
+		<event-handler event="layoutPage" access="private">
+      		<view-page name="header" contentKey="request.pageContent.header" />
+	      	<view-page name="footer" contentKey="request.pageContent.footer" />
+	      	<view-page name="xCol" contentKey="request.pageContent.xCol" />
+	      	<view-page name="subCol" contentKey="request.pageContent.subCol" />
+	      	<view-page name="mainTemplate" />
+	    </event-handler>
+		
+    	<event-handler event="layoutPopUpPage" access="private">
+	      	<!--<property name="colSequence" value="M" />-->
+	      	<view-page name="popUpFooter" contentKey="request.pageContent.popUpFooter" />
+	      	<view-page name="comment.xCol" contentKey="request.pageContent.xCol" />
+	      	<view-page name="subCol" contentKey="request.pageContent.subCol" />
+	      	<view-page name="popUpTemplate" />
+    	</event-handler>
+
+	</event-handlers>
+	
+	<!-- PAGE-VIEWS -->
+	<page-views>
+	    <page-view name="header" page="/views/header.cfm" />
+    	<page-view name="footer" page="/views/footer.cfm" />
+	    <page-view name="xCol" page="/views/xCol.cfm" />
+	    <page-view name="subCol" page="views/subCol.cfm" />
+	    <page-view name="cms.addCategorySuccess" page="views/cms/addCategorySuccess.cfm" />
+	    <page-view name="cms.addSuccess" page="views/cms/addSuccess.cfm" />
+	    <page-view name="cms.cmsNav" page="/views/cms/cmsNav.cfm" />
+		<page-view name="cms.editCategory" page="views/cms/editCategory.cfm" />
+	    <page-view name="cms.editContent" page="views/cms/editContent.cfm" />
+	    <page-view name="cms.deleteCategorySuccess" page="views/cms/deleteCategorySuccess.cfm" />
+		<page-view name="cms.deleteSuccess" page="views/cms/deleteSuccess.cfm" />
+		<page-view name="cms.editCategorySuccess" page="views/cms/editCategorySuccess.cfm" />
+		<page-view name="cms.editSuccess" page="views/cms/editSuccess.cfm" />
+		<page-view name="cms.mainTemplate" page="/views/cms/mainTemplate.cfm" />
+		<page-view name="cms.noEditPermissions" page="views/cms/noEditPermissions.cfm" />
+	    <page-view name="cms.previewMode" page="views/cms/previewMode.cfm" />
+	    <page-view name="cms.selectEditContent" page="views/cms/selectEditContent.cfm" />
+		<page-view name="cms.selectEditCategory" page="views/cms/selectEditCategory.cfm" />
+		<page-view name="cms.showHome" page="/views/cms/showHome.cfm" />
+		<page-view name="cms.showPreview" page="/views/cms/showPreview.cfm" />
+		<page-view name="comment.commentPosted" page="/views/comment/commentPosted.cfm" />
+	    <page-view name="comment.postComment" page="/views/comment/postComment.cfm" />
+	    <page-view name="comment.xCol" page="/views/comment/xCol.cfm" />
+	    <page-view name="main.showHome" page="/views/main/showHome.cfm" />
+	    <page-view name="main.showArticleIndex" page="/views/main/showArticleIndex.cfm" />
+		<page-view name="main.showArticle" page="/views/main/showArticle.cfm" />
+		<page-view name="main.showFeed" page="/views/main/showFeed.cfm" />
+		<page-view name="main.postComment" page="/views/main/postComment.cfm" />
+		<page-view name="photos.showPhotos" page="/views/photos/showPhotos.cfm" />
+		<page-view name="search.showResults" page="/views/search/showResults.cfm" />
+	    <page-view name="mainTemplate" page="/views/mainTemplate.cfm" />
+	    <page-view name="popUpFooter" page="/views/popUpFooter.cfm" />
+	    <page-view name="popUpTemplate" page="/views/popUpTemplate.cfm" />
+		<page-view name="exception" page="/views/exception.cfm" />
+		<page-view name="loginWelcome" page="/views/loginWelcome.cfm" />
+		<page-view name="loginFailure" page="/views/loginFailure.cfm" />
+		<page-view name="logoutSuccess" page="/views/logoutSuccess.cfm" />
+		<page-view name="pleaseLogin" page="/views/pleaseLogin.cfm" />
+		<page-view name="showFormErrors" page="/views/showFormErrors.cfm" />
+		<page-view name="tester" page="/views/tester.cfm" />
+	</page-views>
+	
+	<!-- PLUGINS -->
+	<plugins>
+		<plugin name="ApplicationPlugin" type="uk.co.tcias.gregs.plugins.ApplicationPlugin">			
+		</plugin>
+		<plugin name="UrlRewriterPlugin" type="uk.co.tcias.gregs.plugins.UrlRewriterPlugin">			
+		</plugin>
+	</plugins>
+
+</mach-ii>

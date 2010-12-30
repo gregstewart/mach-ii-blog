@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>Sean Corfield</name>		<email>seancorfield@gmail.com</email>		<website>http://www.corfield.org/</website>		<link>
+<a href="http://www.corfield.org/" title="go to: http://www.corfield.org/">http://www.corfield.org/</a>
+</link>		<yourcomment>    This tip didn't work for me, not using your version of the code nor the original code from the Mozilla site. Also your blog CSS is totally screwed up and almost unreadable in Safari and Firefox!  </yourcomment>		<date>{ts '2004-12-23 23:35:02'}</date>		<formatteddate>23, December 2004</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>Greg Stewart</name>
+<email>gregs@tcias.co.uk</email>
+<website>http://gregs.tcias.co.uk</website>
+<yourcomment>
+    Hey Sean, thanks for the feedback... I am intrigued by the problems with FireFox, as I exclusively use it on both Windows and Linux. Would you mind sending me a screen shot? I'll see what I can do to accommodate Safari, thought this one could be tricky to debug, since I have no access to a OSX. As for the tip not working, hmm, I wonder if there is an issue/difference between the OSX implementation of FireFox and Windows/Linux? Thanks in advance! Cheers Greg
+  </yourcomment>
+<date>{ts '2005-01-04 13:20:55'}</date>
+<formatteddate>04, January 2005</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Sue</name>
+		<email>ghosh_susmita@hotmail.com</email>
+		<website></website>
+		<link><a href="" title="go to: "></a></link>
+		<yourcomment>
+    Hi, I just installed the Bluedragon server on debian &amp; apache 1.3. Did exactly what you said. How do I know the Bluedragon is running OK when I start? and I cannot get a browser session on my XP box to connect to the linux/bluedragon box. I have allowed 192.168.0.3 during installation. but no luck. Please help! Sue
+  </yourcomment>
+		<date>{ts '2005-03-23 23:29:08'}</date>
+		<formatteddate>23, March 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

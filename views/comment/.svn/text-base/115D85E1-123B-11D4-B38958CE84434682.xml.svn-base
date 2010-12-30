@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>Danilo</name>		<email>danilo@shimmerphase.com</email>		<website/>		<link>
+<a href="" title="go to: "/>
+</link>		<yourcomment>You may want to use location.search which contains the query string inclusive of the ?. Also, substring can take one parameter if you want to grab from a specified index through the end of the string. So your code could look like:<pre>var qs = location.search;if(qs!=''){addiionalQS = '&amp;' + qs.substring(1);}</pre>
+</yourcomment>		<date>{ts '2005-08-29 16:31:57'}</date>		<formatteddate>29, August 2005</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>Greg Stewart</name>
+<email>gregs@tcias.co.uk</email>
+<website>http://gregs.tcias.co.uk/</website>
+<yourcomment>That's a way more elegant solution! Thanks!</yourcomment>
+<date>{ts '2005-09-01 12:24:23'}</date>
+<formatteddate>01, September 2005</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>

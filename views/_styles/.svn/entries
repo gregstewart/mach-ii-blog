@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2006-04-27T14:31:45.178519Z"
+   url="file:///Users/gregstewart/Documents/subversion/gregs/trunk/views/_styles"
+   last-author="gregstewart"
+   kind="dir"
+   uuid="c4dbbc63-6a12-0410-8dcf-dd310189df30"
+   repos="file:///Users/gregstewart/Documents/subversion/gregs"
+   revision="1"/>
+<entry
+   committed-rev="1"
+   name="ie7-style.htc"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="fab933a0a805458906b1ea5d16246bf1"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="ie7.htc"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="3a1b29774648a41e2a07e02b5250629e"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="tags.css"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="d924b72054a71cf34c9b72daeca857c4"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="structure.css"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="a7c2f47985ef42dd20538b15efa93d83"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="style.css"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="6bf860363690559bb9c0dc16d7e768c2"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="style2.css"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="b78f6ad7dd38c7258cc98b9b1f6fac43"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="d.css"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="9d52dadc4c30d7b240729d142f442376"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="1"
+   name="ie7-html.css"
+   text-time="2006-04-27T15:05:33.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="5cad5264c7d6f8b0194d4e5f19983436"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+</wc-entries>

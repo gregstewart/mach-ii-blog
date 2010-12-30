@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Marcos Placona</name>
+		<email>marcos.placona@gmail.com</email>
+		<website>www.cfdevelopers.com.br/blog</website>
+		<link><a href="www.cfdevelopers.com.br/blog" title="go to: www.cfdevelopers.com.br/blog">www.cfdevelopers.com.br/blog</a></link>
+		<yourcomment>Hey Greg, very good job. Sometimes is very good to work in a project like this, using different technologies and techniques. I'm missing something like this as well.
+
+Cheers mate.</yourcomment>
+		<date>{ts '2005-08-23 10:33:37'}</date>
+		<formatteddate>23, August 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

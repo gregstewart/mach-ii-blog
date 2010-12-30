@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Iain</name>
+		<email>iain.clements@talk21.com</email>
+		<website></website>
+		<link><a href="" title="go to: "></a></link>
+		<yourcomment>Hi Greg,
+
+Thanks for the pointers on Flash EventListeners, I was bashing my head against a wall trying to get a combo box to work!</yourcomment>
+		<date>{ts '2005-09-29 10:43:21'}</date>
+		<formatteddate>29, September 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2006-04-27T14:31:45.178519Z"
+   url="file:///Users/gregstewart/Documents/subversion/gregs/trunk/views"
+   last-author="gregstewart"
+   kind="dir"
+   uuid="c4dbbc63-6a12-0410-8dcf-dd310189df30"
+   repos="file:///Users/gregstewart/Documents/subversion/gregs"
+   revision="1"/>
+<entry
+   name="_styles"
+   kind="dir"/>
+<entry
+   name="cms"
+   kind="dir"/>
+<entry
+   committed-rev="1"
+   name="loginFailure.cfm"
+   text-time="2006-04-27T15:06:00.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="5eda6ee1a7f42a98254879d0241d4d53"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   committed-rev="4"
+   name="mainTemplate.cfm"
+   text-time="2006-07-13T14:29:54.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="9f859cb6cb86732af22da9c545a65eef"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"
+   revision="4"/>
+<entry
+   name="main"
+   kind="dir"/>
+<entry
+   committed-rev="1"
+   name="popUpFooter.cfm"
+   text-time="2006-04-27T15:06:00.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="e32aff1774c23757b46d9757bea78107"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   name="_scripts"
+   kind="dir"/>
+<entry
+   committed-rev="1"
+   name="loginWelcome.cfm"
+   text-time="2006-04-27T15:06:00.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="48820509d7aa8e0347545358dd68bf84"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:33.000000Z"/>
+<entry
+   name="i"
+   kind="dir"/>
+<entry
+   committed-rev="1"
+   name="subCol.cfm"
+   text-time="2006-04-27T15:06:00.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:34.000000Z"/>
+<entry
+   committed-rev="4"
+   name="header.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="81c7faff74d6204dcc515fc144a5c0ae"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:34.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="1"
+   name="footer.cfm"
+   text-time="2006-04-27T15:06:00.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="6279fe51becb064755c9eaac8f6a0ca0"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:34.000000Z"/>
+<entry
+   name="comment"
+   kind="dir"/>
+<entry
+   committed-rev="1"
+   name="exception.cfm"
+   text-time="2006-04-27T15:06:00.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="f4b2e8d55fed15a31a98ee0d5dac3317"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:34.000000Z"/>
+<entry
+   committed-rev="4"
+   name="popUpTemplate.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="6d85cc7be106da8b55be632b0a80444a"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:35.000000Z"
+   revision="4"/>
+<entry
+   name="search"
+   kind="dir"/>
+<entry
+   committed-rev="4"
+   name="showFormErrors.cfm"
+   text-time="2006-07-13T14:29:28.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="efeb5785cffa5d2b2b6fdbffedac51a1"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:35.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="3"
+   name="pleaseLogin.cfm"
+   text-time="2006-07-03T12:35:49.000000Z"
+   committed-date="2006-07-03T13:07:50.726402Z"
+   checksum="dca99fa62a23cce9d585ee7e91838757"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:35.000000Z"
+   revision="3"/>
+<entry
+   committed-rev="1"
+   name="logoutSuccess.cfm"
+   text-time="2006-04-27T15:06:00.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="91fceefd1a1e6a1583459188e3982d62"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:35.000000Z"/>
+<entry
+   committed-rev="1"
+   name="xCol.cfm"
+   text-time="2006-04-27T15:06:00.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="96f52e16c581088ebf6fb84a7dc28d18"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:35.000000Z"/>
+<entry
+   committed-rev="1"
+   name="tester.cfm"
+   text-time="2006-04-27T15:06:00.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="bf82681c85b96277478b5455b26d65a8"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:35.000000Z"/>
+<entry
+   name="photos"
+   kind="dir"/>
+</wc-entries>

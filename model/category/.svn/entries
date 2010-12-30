@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2006-04-27T14:31:45.178519Z"
+   url="file:///Users/gregstewart/Documents/subversion/gregs/trunk/model/category"
+   last-author="gregstewart"
+   kind="dir"
+   uuid="c4dbbc63-6a12-0410-8dcf-dd310189df30"
+   repos="file:///Users/gregstewart/Documents/subversion/gregs"
+   revision="1"/>
+<entry
+   committed-rev="1"
+   name="categoryDAO_mysql.cfc"
+   text-time="2006-04-27T15:05:32.000000Z"
+   committed-date="2006-04-27T14:31:45.178519Z"
+   checksum="8a4db5ce2a65ba023beef3ca6178a882"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"/>
+<entry
+   committed-rev="3"
+   name="category.cfc"
+   text-time="2006-07-03T12:55:52.000000Z"
+   committed-date="2006-07-03T13:07:50.726402Z"
+   checksum="42b7cefa99c5bff20eae6d7f9039192a"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"
+   revision="3"/>
+<entry
+   committed-rev="3"
+   name="categoryGateway.cfc"
+   text-time="2006-07-03T11:04:23.000000Z"
+   committed-date="2006-07-03T13:07:50.726402Z"
+   checksum="e1c2ac78016a5a21eb9757188a38be47"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"
+   revision="3"/>
+<entry
+   committed-rev="4"
+   name="categoryDAO.cfc"
+   text-time="2006-07-03T13:12:11.000000Z"
+   committed-date="2006-07-13T14:30:44.565213Z"
+   checksum="3efc39f7e381a9f958fdbe0ff75b2607"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"
+   revision="4"/>
+<entry
+   committed-rev="3"
+   name="categoryListener.cfc"
+   text-time="2006-07-03T12:59:42.000000Z"
+   committed-date="2006-07-03T13:07:50.726402Z"
+   checksum="78202cfae321c656fb22ce95d887d523"
+   last-author="gregstewart"
+   kind="file"
+   prop-time="2006-04-27T15:05:32.000000Z"
+   revision="3"/>
+</wc-entries>

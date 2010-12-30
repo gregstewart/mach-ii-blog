@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>Yves A</name>
+		<email>yves.arsenault@gmail.com</email>
+		<website></website>
+		<link><a href="" title="go to: "></a></link>
+		<yourcomment>
+    Funny, I noticed this the other day... I had skype running and have my laptop setup to manually start some services I use for development like ColdFusion(OS-WinXP Home, Apache).. when I tried to start my apache service, errors..... found out that Skype was the culprit.
+  </yourcomment>
+		<date>{ts '2005-01-18 02:32:18'}</date>
+		<formatteddate>18, January 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

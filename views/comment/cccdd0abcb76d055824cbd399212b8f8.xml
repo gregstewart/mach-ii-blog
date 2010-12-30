@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comments>
+	<comment>
+		<id>1</id>
+		<name>J</name>
+		<email>j@yahoo.com</email>
+		<website>test.com</website>
+		<link><a href="test.com" title="go to: test.com">test.com</a></link>
+		<yourcomment>
+    just a test
+  </yourcomment>
+		<date>{ts '2005-02-10 15:25:58'}</date>
+		<formatteddate>10, February 2005</formatteddate>
+		<publish>1</publish>
+	</comment>
+</comments>

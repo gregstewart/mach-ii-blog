@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>	<comment>		<id>1</id>		<name>Charles Polisher</name>		<email>cpolish@surewest.net</email>		<website/>		<link>
+<a href="" title="go to: "/>
+</link>		<yourcomment>locate certainly is a great utility. If you have a recent version of egrep that understands the --color argument, then you can define this nifty function in your .bashrc:function locate() {    case $1     in    -i)        (${LOCATE} -i $2) | egrep -i --color `echo "$2" |tr [:upper:] [:lower:]`    ;;    *)        (${LOCATE} -i $1) \        | /usr/bin/egrep -i $1 \        | /usr/bin/cut -b 1-${COLUMNS} \        | /usr/bin/egrep -i --color `echo "$1" |tr [:upper:] [:lower:]`    ;;    esac    }Now all your searches hilight the matching string. Try it!</yourcomment>		<date>{ts '2005-10-29 21:26:21'}</date>		<formatteddate>29, October 2005</formatteddate>		<publish>1</publish>	</comment>
+<comment>
+<id>2</id>
+<name>Charles Polisher</name>
+<email>cpolish@surewest.net</email>
+<website/>
+<yourcomment>Lets try that again with some line breaks:&#13;function locate() {&lt;br&gt;&#13;    case $1&lt;br&gt; &#13;    in&lt;br&gt;&#13;    -i)&lt;br&gt;&#13;        (${LOCATE} -i $2) | egrep -i --color `echo "$2" |tr [:upper:] [:lower:]`&lt;br&gt;&#13;    ;;&lt;br&gt;&#13;    *)&lt;br&gt;&#13;        (${LOCATE} -i $1) \&lt;br&gt;&#13;        | /usr/bin/egrep -i $1 \&lt;br&gt;&#13;        | /usr/bin/cut -b 1-${COLUMNS} \&lt;br&gt;&#13;        | /usr/bin/egrep -i --color `echo "$1" |tr [:upper:] [:lower:]`&lt;br&gt;&#13;    ;;&lt;br&gt;&#13;    esac&lt;br&gt;    &#13;}&lt;br&gt;&#13;</yourcomment>
+<date>{ts '2005-10-29 21:31:48'}</date>
+<formatteddate>29, October 2005</formatteddate>
+<publish>1</publish>
+</comment>
+<comment>
+<id>3</id>
+<name>Greg Stewart</name>
+<email>gregs@tcias.co.uk</email>
+<website>http://gregs.tcias.co.uk/</website>
+<yourcomment>That is awesome thanks Charles!</yourcomment>
+<date>{ts '2005-10-30 19:30:41'}</date>
+<formatteddate>30, October 2005</formatteddate>
+<publish>1</publish>
+</comment>
+</comments>
